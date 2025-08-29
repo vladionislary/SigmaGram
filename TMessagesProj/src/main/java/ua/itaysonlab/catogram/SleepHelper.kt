@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram
+package ua.itaysonlab.sigmagram
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -12,6 +12,6 @@ class SleepHelper : BroadcastReceiver() {
                 MediaController.getInstance()
                     .pauseMessage(MediaController.getInstance().playingMessageObject)
             }
-        CatogramConfig.sleepTimer = false
+        SigmaGramConfig.sleepTimer = false
     }
 }

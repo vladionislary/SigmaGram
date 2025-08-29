@@ -100,7 +100,7 @@ import org.telegram.ui.Components.StickerEmptyView;
 
 import java.util.ArrayList;
 
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class ContactsActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
 
@@ -789,14 +789,14 @@ public class ContactsActivity extends BaseFragment implements NotificationCenter
             if (activity != null) {
                 checkPermission = false;
                 if (activity.checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
-                    if (activity.shouldShowRequestPermissionRationale(Manifest.permission.READ_CONTACTS) && !CatogramConfig.INSTANCE.getContactsNever()) {
+                    if (activity.shouldShowRequestPermissionRationale(Manifest.permission.READ_CONTACTS) && !SigmaGramConfig.INSTANCE.getContactsNever()) {
                         AlertDialog.Builder builder = AlertsCreator.createContactsPermissionDialog(activity, param -> {
                             askAboutContacts = param != 0;
                             if (param == 0) {
                                 return;
                             }
                             if (param == 2) {
-                                CatogramConfig.shownContactsNever();
+                                SigmaGramConfig.shownContactsNever();
                                 return;
                             }
                             askForPermissons(false);
@@ -845,14 +845,14 @@ public class ContactsActivity extends BaseFragment implements NotificationCenter
         if (activity == null || !UserConfig.getInstance(currentAccount).syncContacts || activity.checkSelfPermission(Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
             return;
         }
-        if (alert && askAboutContacts && !CatogramConfig.INSTANCE.getContactsNever()) {
+        if (alert && askAboutContacts && !SigmaGramConfig.INSTANCE.getContactsNever()) {
             AlertDialog.Builder builder = AlertsCreator.createContactsPermissionDialog(activity, param -> {
                 askAboutContacts = param != 0;
                 if (param == 0) {
                     return;
                 }
                 if (param == 2) {
-                    CatogramConfig.shownContactsNever();
+                    SigmaGramConfig.shownContactsNever();
                     return;
                 }
                 askForPermissons(false);

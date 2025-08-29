@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.translate
+package ua.itaysonlab.sigmagram.translate
 
 import androidx.appcompat.app.AppCompatActivity
 import org.telegram.messenger.MessageObject

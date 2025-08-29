@@ -1,11 +1,11 @@
-package ua.itaysonlab.catogram.preferences
+package ua.itaysonlab.sigmagram.preferences
 
 import org.telegram.messenger.LocaleController
 import org.telegram.messenger.R
 import org.telegram.ui.ActionBar.BaseFragment
-import ua.itaysonlab.catogram.CatogramConfig
-import ua.itaysonlab.catogram.OTA
-import ua.itaysonlab.catogram.preferences.ktx.*
+import ua.itaysonlab.sigmagram.SigmaGramConfig
+import ua.itaysonlab.sigmagram.OTA
+import ua.itaysonlab.sigmagram.preferences.ktx.*
 import ua.itaysonlab.tgkit.preference.types.TGKitTextIconRow
 
 class UpdatesPreferenceEntry : BasePreferencesEntry {
@@ -16,9 +16,9 @@ class UpdatesPreferenceEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_Auto_Ota_summary", R.string.CG_Auto_Ota_summary)
 
                 contract({
-                    return@contract CatogramConfig.autoOta
+                    return@contract SigmaGramConfig.autoOta
                 }) {
-                    CatogramConfig.autoOta = it
+                    SigmaGramConfig.autoOta = it
                 }
             }
             textIcon {

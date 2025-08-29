@@ -39,7 +39,7 @@ import org.telegram.ui.ProfileActivity;
 
 import java.util.ArrayList;
 
-import ua.itaysonlab.extras.CatogramExtras;
+import ua.itaysonlab.extras.SigmaGramExtras;
 
 public class ProfileGalleryView extends CircularViewPager implements NotificationCenter.NotificationCenterDelegate {
 
@@ -847,7 +847,7 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
                 forceResetPosition = false;
 
                 if (fromCache) {
-                    MessagesController.getInstance(currentAccount).loadDialogPhotos(did, CatogramExtras.LOAD_AVATAR_COUNT_HEADER, 0, false, parentClassGuid);
+                    MessagesController.getInstance(currentAccount).loadDialogPhotos(did, SigmaGramExtras.LOAD_AVATAR_COUNT_HEADER, 0, false, parentClassGuid);
                 }
                 if (callback != null) {
                     callback.onPhotosLoaded();

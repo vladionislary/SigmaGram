@@ -146,8 +146,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Locale;
 
-import ua.itaysonlab.catogram.CatogramConfig;
-import ua.itaysonlab.catogram.message_ctx_menu.TgxExtras;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
+import ua.itaysonlab.sigmagram.message_ctx_menu.TgxExtras;
 
 public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate, ImageReceiver.ImageReceiverDelegate, DownloadController.FileDownloadProgressListener, TextSelectionHelper.SelectableView {
 
@@ -4653,7 +4653,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
 
                 int maxVote = 0;
                 if (!animatePollAnswer && pollVoteInProgress && vibrateOnPollVote) {
-                    ua.itaysonlab.extras.CatogramExtras.performHapticFeedback(this, HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
+                    ua.itaysonlab.extras.SigmaGramExtras.performHapticFeedback(this, HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                 }
                 animatePollAnswerAlpha = animatePollAnswer = attachedToWindow && (pollVoteInProgress || pollUnvoteInProgress);
                 ArrayList<PollButton> previousPollButtons = null;
@@ -5098,16 +5098,16 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         }
                     }
 
-                    //ua.itaysonlab.CatogramLogger.d("Stickers:BeforeAmplifier", "photoWidth = "+photoWidth+", photoHeight = "+photoHeight+", max: W = "+maxWidth+" / H = "+maxHeight);
+                    //ua.itaysonlab.SigmaGramLogger.d("Stickers:BeforeAmplifier", "photoWidth = "+photoWidth+", photoHeight = "+photoHeight+", max: W = "+maxWidth+" / H = "+maxHeight);
 
-                    float modifier = CatogramConfig.INSTANCE.getSlider_stickerAmplifier() / 100f;
+                    float modifier = SigmaGramConfig.INSTANCE.getSlider_stickerAmplifier() / 100f;
 
                     photoWidth = (int) (photoWidth * modifier);
                     photoHeight = (int) (photoHeight * modifier);
                     maxWidth = (int) (maxWidth * modifier);
                     maxHeight = (int) (maxHeight * modifier);
 
-                    //ua.itaysonlab.CatogramLogger.d("Stickers:AfterAmplifier", "photoWidth = "+photoWidth+", photoHeight = "+photoHeight+", max: W = "+maxWidth+" / H = "+maxHeight+", amplifier = "+modifier+" [pref = "+CatogramConfig.INSTANCE.getSlider_stickerAmplifier()+"]");
+                    //ua.itaysonlab.SigmaGramLogger.d("Stickers:AfterAmplifier", "photoWidth = "+photoWidth+", photoHeight = "+photoHeight+", max: W = "+maxWidth+" / H = "+maxHeight+", amplifier = "+modifier+" [pref = "+SigmaGramConfig.INSTANCE.getSlider_stickerAmplifier()+"]");
 
                     Object parentObject = messageObject;
                     int w = (int) (photoWidth / AndroidUtilities.density);

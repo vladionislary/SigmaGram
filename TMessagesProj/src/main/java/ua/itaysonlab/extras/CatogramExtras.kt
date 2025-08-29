@@ -3,9 +3,9 @@ package ua.itaysonlab.extras
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.*
-import ua.itaysonlab.catogram.CatogramConfig.controversiveNoSecureFlag
-import ua.itaysonlab.catogram.CatogramConfig.noVibration
-import ua.itaysonlab.catogram.CatogramConfig.drawerBlur
+import ua.itaysonlab.sigmagram.SigmaGramConfig.controversiveNoSecureFlag
+import ua.itaysonlab.sigmagram.SigmaGramConfig.noVibration
+import ua.itaysonlab.sigmagram.SigmaGramConfig.drawerBlur
 import android.graphics.drawable.BitmapDrawable
 import android.view.WindowManager
 import android.os.Vibrator
@@ -21,7 +21,7 @@ import java.io.FileInputStream
 import java.lang.Exception
 
 
-object CatogramExtras {
+object SigmaGramExtras {
 
     var CG_VERSION = "3.9.7"
     @JvmField

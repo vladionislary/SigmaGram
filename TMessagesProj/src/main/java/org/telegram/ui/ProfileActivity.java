@@ -186,10 +186,10 @@ import java.util.concurrent.CountDownLatch;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import ua.itaysonlab.catogram.CatogramConfig;
-import ua.itaysonlab.catogram.CatogramPreferencesNavigator;
-import ua.itaysonlab.catogram.translate.TranslateAPI;
-import ua.itaysonlab.extras.CatogramExtras;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramPreferencesNavigator;
+import ua.itaysonlab.sigmagram.translate.TranslateAPI;
+import ua.itaysonlab.extras.SigmaGramExtras;
 
 public class ProfileActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate, SharedMediaLayout.SharedMediaPreloaderDelegate, ImageUpdater.ImageUpdaterDelegate, SharedMediaLayout.Delegate {
 
@@ -375,7 +375,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     private int passwordSuggestionRow;
     private int settingsSectionRow;
     private int settingsSectionRow2;
-    private int catogramRow;
+    private int sigmagramRow;
     private int notificationRow;
     private int languageRow;
     private int privacyRow;
@@ -2664,8 +2664,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 presentFragment(fragment);
             } else if (position == notificationRow) {
                 presentFragment(new NotificationsSettingsActivity());
-            } else if (position == catogramRow) {
-                presentFragment(CatogramPreferencesNavigator.createMainMenu());
+            } else if (position == sigmagramRow) {
+                presentFragment(SigmaGramPreferencesNavigator.createMainMenu());
             } else if (position == privacyRow) {
                 presentFragment(new PrivacySettingsActivity());
             } else if (position == dataRow) {
@@ -3626,7 +3626,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     int action = actions.get(i);
                     if (action == 1 && (channelParticipant instanceof TLRPC.TL_channelParticipantAdmin || participant instanceof TLRPC.TL_chatParticipantAdmin)) {
                         AlertDialog.Builder builder2 = new AlertDialog.Builder(getParentActivity());
-                        builder2.setTitle("Catogram");
+                        builder2.setTitle("SigmaGram");
                         builder2.setMessage(LocaleController.formatString("AdminWillBeRemoved", R.string.AdminWillBeRemoved, ContactsController.formatName(user.first_name, user.last_name)));
                         builder2.setPositiveButton(LocaleController.getString("OK", R.string.OK), (dialog, which) -> {
                             if (channelParticipant != null) {
@@ -5484,7 +5484,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         passwordSuggestionRow = -1;
         settingsSectionRow = -1;
         settingsSectionRow2 = -1;
-        catogramRow = -1;
+        sigmagramRow = -1;
         notificationRow = -1;
         languageRow = -1;
         privacyRow = -1;
@@ -5567,7 +5567,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 setUsernameRow = rowCount++;
                 bioRow = rowCount++;
                 idRow = rowCount++;
-                if (CatogramConfig.INSTANCE.getShowDc())
+                if (SigmaGramConfig.INSTANCE.getShowDc())
                     dcRow = rowCount++;
                 settingsSectionRow = rowCount++;
 
@@ -5582,7 +5582,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
 
                 settingsSectionRow2 = rowCount++;
-                catogramRow = rowCount++;
+                sigmagramRow = rowCount++;
                 notificationRow = rowCount++;
                 privacyRow = rowCount++;
                 dataRow = rowCount++;
@@ -5623,7 +5623,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     usernameRow = rowCount++;
                 }
                 idRow = rowCount++;
-                if (CatogramConfig.INSTANCE.getShowDc())
+                if (SigmaGramConfig.INSTANCE.getShowDc())
                     dcRow = rowCount++;
                 if (phoneRow != -1 || userInfoRow != -1 || usernameRow != -1) {
                     notificationsDividerRow = rowCount++;
@@ -5673,7 +5673,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
             }
             idRow = rowCount++;
-            if (CatogramConfig.INSTANCE.getShowDc())
+            if (SigmaGramConfig.INSTANCE.getShowDc())
                 dcRow = rowCount++;
             if (infoHeaderRow != -1) {
                 notificationsDividerRow = rowCount++;
@@ -6949,7 +6949,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                 }
                                 break;
                         }
-                        cell.setText("Catogram v" + CatogramExtras.INSTANCE.getCG_VERSION() + " [" + BuildVars.BUILD_VERSION_STRING + "]");
+                        cell.setText("SigmaGram v" + SigmaGramExtras.INSTANCE.getCG_VERSION() + " [" + BuildVars.BUILD_VERSION_STRING + "]");
                     } catch (Exception e) {
                         FileLog.e(e);
                     }
@@ -7080,7 +7080,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         TLRPC.User user = UserConfig.getInstance(currentAccount).getCurrentUser();
                         String value;
                         if (user != null && user.phone != null && user.phone.length() != 0) {
-                            if  (ua.itaysonlab.catogram.CatogramConfig.INSTANCE.getHidePhoneNumber()) {
+                            if  (ua.itaysonlab.sigmagram.SigmaGramConfig.INSTANCE.getHidePhoneNumber()) {
                                 value = LocaleController.getString("AS_Hidden", R.string.AS_Hidden);
                         } else {
                                 value = PhoneFormat.getInstance().format("+" + user.phone);
@@ -7194,7 +7194,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         textCell.setColors(null, Theme.key_windowBackgroundWhiteRedText5);
                     } else if (position == languageRow) {
                         textCell.setTextAndIcon(LocaleController.getString("Language", R.string.Language), R.drawable.menu_language, false);
-                    } else if (position == catogramRow) {
+                    } else if (position == sigmagramRow) {
                         textCell.setTextAndIcon(LocaleController.getString("AdvancedSettings", R.string.AdvancedSettings), R.drawable.menu_settings, true);
                     } else if (position == notificationRow) {
                         textCell.setTextAndIcon(LocaleController.getString("NotificationsAndSounds", R.string.NotificationsAndSounds), R.drawable.menu_notifications, true);
@@ -7353,7 +7353,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         position == languageRow || position == setUsernameRow || position == bioRow ||
                         position == versionRow || position == dataRow || position == chatRow ||
                         position == questionRow || position == devicesRow || position == filtersRow ||
-                        position == faqRow || position == policyRow || position == sendLogsRow || position == catogramRow ||
+                        position == faqRow || position == policyRow || position == sendLogsRow || position == sigmagramRow ||
                         position == clearLogsRow ||  position == sendLastLogsRow || position == setAvatarRow;
             }
             if (holder.itemView instanceof UserCell) {
@@ -7388,7 +7388,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             } else if (position == settingsTimerRow || position == settingsKeyRow || position == reportRow ||
                     position == subscribersRow || position == subscribersRequestsRow || position == administratorsRow || position == blockedUsersRow ||
                     position == addMemberRow || position == joinRow || position == unblockRow ||
-                    position == sendMessageRow || position == notificationRow || position == catogramRow || position == privacyRow ||
+                    position == sendMessageRow || position == notificationRow || position == sigmagramRow || position == privacyRow ||
                     position == languageRow || position == dataRow || position == chatRow ||
                     position == questionRow || position == devicesRow || position == filtersRow ||
                     position == faqRow || position == policyRow || position == sendLogsRow || position == sendLastLogsRow ||

@@ -21,7 +21,7 @@ import android.text.TextUtils;
 import java.nio.ByteBuffer;
 import java.util.regex.Pattern;
 
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class AudioRecordJNI {
 
@@ -76,7 +76,7 @@ public class AudioRecordJNI {
 				if (NoiseSuppressor.isAvailable()) {
 					ns = NoiseSuppressor.create(audioRecord.getAudioSessionId());
 					if (ns != null) {
-						ns.setEnabled((Instance.getGlobalServerConfig().useSystemNs || CatogramConfig.INSTANCE.getOverrideVoipEnhancements()) && isGoodAudioEffect(ns));
+						ns.setEnabled((Instance.getGlobalServerConfig().useSystemNs || SigmaGramConfig.INSTANCE.getOverrideVoipEnhancements()) && isGoodAudioEffect(ns));
 					}
 				} else {
 					VLog.w("NoiseSuppressor is not available on this device :(");
@@ -88,7 +88,7 @@ public class AudioRecordJNI {
 				if (AcousticEchoCanceler.isAvailable()) {
 					aec = AcousticEchoCanceler.create(audioRecord.getAudioSessionId());
 					if (aec != null) {
-						aec.setEnabled((Instance.getGlobalServerConfig().useSystemAec || CatogramConfig.INSTANCE.getOverrideVoipEnhancements()) && isGoodAudioEffect(aec));
+						aec.setEnabled((Instance.getGlobalServerConfig().useSystemAec || SigmaGramConfig.INSTANCE.getOverrideVoipEnhancements()) && isGoodAudioEffect(aec));
 					}
 				} else {
 					VLog.w("AcousticEchoCanceler is not available on this device");

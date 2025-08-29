@@ -1,8 +1,8 @@
-package ua.itaysonlab.catogram.vkui.icon_replaces
+package ua.itaysonlab.sigmagram.vkui.icon_replaces
 
 import android.util.SparseIntArray
 import org.telegram.messenger.R
-import ua.itaysonlab.catogram.vkui.newSparseInt
+import ua.itaysonlab.sigmagram.vkui.newSparseInt
 
 class VkIconReplace : BaseIconReplace() {
     override val replaces: SparseIntArray = newSparseInt(

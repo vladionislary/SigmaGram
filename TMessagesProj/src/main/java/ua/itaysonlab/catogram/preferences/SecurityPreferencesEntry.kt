@@ -1,12 +1,12 @@
-package ua.itaysonlab.catogram.preferences
+package ua.itaysonlab.sigmagram.preferences
 
 import android.os.Environment
 import android.widget.Toast
 import org.telegram.messenger.LocaleController
 import org.telegram.messenger.R
 import org.telegram.ui.ActionBar.BaseFragment
-import ua.itaysonlab.catogram.CatogramConfig
-import ua.itaysonlab.catogram.preferences.ktx.*
+import ua.itaysonlab.sigmagram.SigmaGramConfig
+import ua.itaysonlab.sigmagram.preferences.ktx.*
 import ua.itaysonlab.tgkit.preference.types.TGKitTextIconRow
 import java.io.File
 
@@ -18,9 +18,9 @@ class SecurityPreferencesEntry : BasePreferencesEntry {
                 title = LocaleController.getString("AS_NoProxyPromo", R.string.AS_NoProxyPromo)
 
                 contract({
-                    return@contract CatogramConfig.hideProxySponsor
+                    return@contract SigmaGramConfig.hideProxySponsor
                 }) {
-                    CatogramConfig.hideProxySponsor = it
+                    SigmaGramConfig.hideProxySponsor = it
                 }
             }
             switch {
@@ -28,9 +28,9 @@ class SecurityPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_PrivateDir_desc", R.string.CG_PrivateDir_desc)
 
                 contract({
-                    return@contract CatogramConfig.privateDir
+                    return@contract SigmaGramConfig.privateDir
                 }) {
-                    CatogramConfig.privateDir = it
+                    SigmaGramConfig.privateDir = it
                 }
             }
             textIcon {

@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package ua.itaysonlab.catogram.double_bottom;
+package ua.itaysonlab.sigmagram.double_bottom;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -331,7 +331,7 @@ public class DoubleBottomPasscodeActivity extends BaseFragment implements Notifi
         }
         Vibrator v = (Vibrator) getParentActivity().getSystemService(Context.VIBRATOR_SERVICE);
         if (v != null) {
-            ua.itaysonlab.extras.CatogramExtras.vibrate(v, 200);
+            ua.itaysonlab.extras.SigmaGramExtras.vibrate(v, 200);
         }
         AndroidUtilities.shakeView(titleTextView, 2, 0);
     }

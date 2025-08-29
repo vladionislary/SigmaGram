@@ -72,10 +72,10 @@ import org.telegram.ui.LaunchActivity;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import ua.itaysonlab.catogram.CatogramConfig;
-import ua.itaysonlab.catogram.double_bottom.DoubleBottomBridge;
-import ua.itaysonlab.catogram.double_bottom.DoubleBottomStorageBridge;
-import ua.itaysonlab.catogram.security.CGBiometricPrompt;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
+import ua.itaysonlab.sigmagram.double_bottom.DoubleBottomBridge;
+import ua.itaysonlab.sigmagram.double_bottom.DoubleBottomStorageBridge;
+import ua.itaysonlab.sigmagram.security.CGBiometricPrompt;
 
 public class PasscodeView extends FrameLayout {
 
@@ -131,7 +131,7 @@ public class PasscodeView extends FrameLayout {
                 return;
             }
             try {
-                ua.itaysonlab.extras.CatogramExtras.performHapticFeedback(this, HapticFeedbackConstants.KEYBOARD_TAP);
+                ua.itaysonlab.extras.SigmaGramExtras.performHapticFeedback(this, HapticFeedbackConstants.KEYBOARD_TAP);
             } catch (Exception e) {
                 FileLog.e(e);
             }
@@ -252,7 +252,7 @@ public class PasscodeView extends FrameLayout {
                 return false;
             }
             try {
-                ua.itaysonlab.extras.CatogramExtras.performHapticFeedback(this, HapticFeedbackConstants.KEYBOARD_TAP);
+                ua.itaysonlab.extras.SigmaGramExtras.performHapticFeedback(this, HapticFeedbackConstants.KEYBOARD_TAP);
             } catch (Exception e) {
                 FileLog.e(e);
             }
@@ -923,7 +923,7 @@ public class PasscodeView extends FrameLayout {
     private void onPasscodeError() {
         Vibrator v = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
         if (v != null) {
-            ua.itaysonlab.extras.CatogramExtras.vibrate(v, 200);
+            ua.itaysonlab.extras.SigmaGramExtras.vibrate(v, 200);
         }
         shakeTextView(2, 0);
     }
@@ -1270,7 +1270,7 @@ public class PasscodeView extends FrameLayout {
         fingerprintStatusTextView.setTextColor(0xfff4511e);
         Vibrator v = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
         if (v != null) {
-            ua.itaysonlab.extras.CatogramExtras.vibrate(v, 200);
+            ua.itaysonlab.extras.SigmaGramExtras.vibrate(v, 200);
         }
         AndroidUtilities.shakeView(fingerprintStatusTextView, 2, 0);
     }

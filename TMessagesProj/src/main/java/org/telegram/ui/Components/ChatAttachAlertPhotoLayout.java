@@ -99,7 +99,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayout implements NotificationCenter.NotificationCenterDelegate {
 
@@ -1588,7 +1588,7 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
         }
         boolean old = deviceHasGoodCamera;
         boolean old2 = noCameraPermissions;
-        if (!SharedConfig.inappCamera || CatogramConfig.INSTANCE.getDisableAttachCamera()) {
+        if (!SharedConfig.inappCamera || SigmaGramConfig.INSTANCE.getDisableAttachCamera()) {
             deviceHasGoodCamera = false;
         } else {
             if (Build.VERSION.SDK_INT >= 23) {

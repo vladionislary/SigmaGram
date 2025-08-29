@@ -166,9 +166,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import ua.itaysonlab.catogram.CatogramConfig;
-import ua.itaysonlab.catogram.OTA;
-import ua.itaysonlab.catogram.vkui.CGUIResources;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
+import ua.itaysonlab.sigmagram.OTA;
+import ua.itaysonlab.sigmagram.vkui.CGUIResources;
 import ua.itaysonlab.redesign.BottomSlideFragment;
 
 public class LaunchActivity extends AppCompatActivity implements  BottomSlideFragment.BottomSlideActivityInterface, ActionBarLayout.ActionBarLayoutDelegate, NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate {
@@ -345,7 +345,7 @@ public class LaunchActivity extends AppCompatActivity implements  BottomSlideFra
 
         super.onCreate(savedInstanceState);
 
-        if (CatogramConfig.INSTANCE.getAutoOta())
+        if (SigmaGramConfig.INSTANCE.getAutoOta())
             OTA.download(this, false);
 
         if (Build.VERSION.SDK_INT >= 24) {
@@ -5416,7 +5416,7 @@ public class LaunchActivity extends AppCompatActivity implements  BottomSlideFra
                         showVoiceChatTooltip(mute ? UndoView.ACTION_VOIP_SOUND_MUTED : UndoView.ACTION_VOIP_SOUND_UNMUTED);
                     }
                 }
-            } else if (CatogramConfig.INSTANCE.getPlayVideoOnVolume() && (!mainFragmentsStack.isEmpty() && (!PhotoViewer.hasInstance() || !PhotoViewer.getInstance().isVisible()) && event.getRepeatCount() == 0)) {
+            } else if (SigmaGramConfig.INSTANCE.getPlayVideoOnVolume() && (!mainFragmentsStack.isEmpty() && (!PhotoViewer.hasInstance() || !PhotoViewer.getInstance().isVisible()) && event.getRepeatCount() == 0)) {
                 BaseFragment fragment = mainFragmentsStack.get(mainFragmentsStack.size() - 1);
                 if (fragment instanceof ChatActivity) {
                     if (((ChatActivity) fragment).maybePlayVisibleVideo()) {

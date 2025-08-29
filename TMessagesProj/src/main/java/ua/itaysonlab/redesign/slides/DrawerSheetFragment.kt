@@ -13,7 +13,7 @@ import android.widget.TextView
 import org.telegram.messenger.*
 import org.telegram.ui.*
 import org.telegram.ui.ActionBar.Theme
-import ua.itaysonlab.extras.CatogramExtras
+import ua.itaysonlab.extras.SigmaGramExtras
 import ua.itaysonlab.redesign.BaseActionedSwipeFragment
 
 class DrawerSheetFragment : BaseActionedSwipeFragment() {
@@ -94,7 +94,7 @@ class DrawerSheetFragment : BaseActionedSwipeFragment() {
 
     private fun createBackground(ctx: Context): View {
         return ImageView(ctx).apply {
-            setImageDrawable(CatogramExtras.currentAccountBitmap)
+            setImageDrawable(SigmaGramExtras.currentAccountBitmap)
             scaleType = ImageView.ScaleType.CENTER_CROP
         }
     }

@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.translate
+package ua.itaysonlab.sigmagram.translate
 
 import android.content.Context
 import org.telegram.ui.ActionBar.BottomSheet

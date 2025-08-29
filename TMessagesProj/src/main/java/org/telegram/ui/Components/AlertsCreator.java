@@ -4412,7 +4412,7 @@ public class AlertsCreator {
             if (editText.length() == 0) {
                 Vibrator vibrator = (Vibrator) ApplicationLoader.applicationContext.getSystemService(Context.VIBRATOR_SERVICE);
                 if (vibrator != null) {
-                    ua.itaysonlab.extras.CatogramExtras.vibrate(vibrator, 200);
+                    ua.itaysonlab.extras.SigmaGramExtras.vibrate(vibrator, 200);
                 }
                 AndroidUtilities.shakeView(editText, 2, 0);
                 return;

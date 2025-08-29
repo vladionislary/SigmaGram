@@ -128,9 +128,9 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 
-import ua.itaysonlab.catogram.CGFeatureHooks;
-import ua.itaysonlab.catogram.CatogramConfig;
-import ua.itaysonlab.catogram.MonetHelper;
+import ua.itaysonlab.sigmagram.CGFeatureHooks;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
+import ua.itaysonlab.sigmagram.MonetHelper;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -4828,7 +4828,7 @@ public class Theme {
         Integer monetBackground = MonetHelper.getBackgroundColor(ApplicationLoader.applicationContext.getApplicationContext());
         ThemeInfo themeInfo = new ThemeInfo();
         themeInfo.name = "Blue";
-        if (CatogramConfig.INSTANCE.getRedesign_TelegramThemes()) {
+        if (SigmaGramConfig.INSTANCE.getRedesign_TelegramThemes()) {
             themeInfo.assetName = "bluebubbles.attheme";
             themeInfo.previewBackgroundColor = 0xff95beec;
             themeInfo.previewInColor = 0xffffffff;
@@ -4876,7 +4876,7 @@ public class Theme {
 
         themeInfo = new ThemeInfo();
         themeInfo.name = "Dark Blue";
-        if (CatogramConfig.INSTANCE.getRedesign_TelegramThemes()) {
+        if (SigmaGramConfig.INSTANCE.getRedesign_TelegramThemes()) {
             themeInfo.assetName = "darkblue.attheme";
             themeInfo.previewBackgroundColor = 0xff5f6e82;
             themeInfo.previewInColor = 0xff76869c;

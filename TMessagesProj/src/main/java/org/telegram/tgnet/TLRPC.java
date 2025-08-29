@@ -22,7 +22,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import ua.itaysonlab.catogram.tabs.TabIconManager;
+import ua.itaysonlab.sigmagram.tabs.TabIconManager;
 
 @SuppressWarnings("unchecked")
 public class TLRPC {

@@ -20,10 +20,10 @@
     <string name="AS_Hidden">已隐藏</string>
     <string name="AS_UserID">用户 ID</string>
     <string name="AS_GroupID">群组 ID</string>
-    <string name="CatogramVersion">Catogram %1$s</string>
+    <string name="SigmaGramVersion">SigmaGram %1$s</string>
     <string name="AV_ThemeBased">动态</string>
-    <string name="AS_Header_Categories">Catogram 客制化</string>
-    <string name="AS_Header_About">关于 Catogram</string>
+    <string name="AS_Header_Categories">SigmaGram 客制化</string>
+    <string name="AS_Header_About">关于 SigmaGram</string>
     <string name="CG_AboutDesc">实验性质的 Telegram 修改版。</string>
     <string name="CG_Donate">捐赠通道</string>
     <string name="CG_DonatDesc">帮我们购买PS5</string>

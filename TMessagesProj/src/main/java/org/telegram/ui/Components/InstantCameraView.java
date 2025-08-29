@@ -109,8 +109,8 @@ import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.egl.EGLSurface;
 import javax.microedition.khronos.opengles.GL;
 
-import ua.itaysonlab.catogram.CatogramConfig;
-import ua.itaysonlab.catogram.voicerec.InstantVideoBridge;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
+import ua.itaysonlab.sigmagram.voicerec.InstantVideoBridge;
 
 @TargetApi(18)
 public class InstantCameraView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
@@ -541,7 +541,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             textureOverlayView.setImageResource(R.drawable.icplaceholder);
         }
         cameraReady = false;
-        isFrontface = !CatogramConfig.INSTANCE.getRearCam();
+        isFrontface = !SigmaGramConfig.INSTANCE.getRearCam();
         selectedCamera = null;
         recordedTime = 0;
         progress = 0;
@@ -2198,7 +2198,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
                         return;
                     }
                     try {
-                        ua.itaysonlab.extras.CatogramExtras.performHapticFeedback(InstantCameraView.this, HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
+                        ua.itaysonlab.extras.SigmaGramExtras.performHapticFeedback(InstantCameraView.this, HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                     } catch (Exception ignore) {
 
                     }

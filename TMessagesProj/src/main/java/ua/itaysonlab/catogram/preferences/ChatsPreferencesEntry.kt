@@ -1,13 +1,13 @@
-package ua.itaysonlab.catogram.preferences
+package ua.itaysonlab.sigmagram.preferences
 
 import androidx.core.util.Pair
 import org.telegram.messenger.LocaleController
 import org.telegram.messenger.R
 import org.telegram.ui.ActionBar.BaseFragment
 import org.telegram.ui.ActionBar.Theme
-import ua.itaysonlab.catogram.CGFeatureHooks
-import ua.itaysonlab.catogram.CatogramConfig
-import ua.itaysonlab.catogram.preferences.ktx.*
+import ua.itaysonlab.sigmagram.CGFeatureHooks
+import ua.itaysonlab.sigmagram.SigmaGramConfig
+import ua.itaysonlab.sigmagram.preferences.ktx.*
 import ua.itaysonlab.tgkit.preference.types.TGKitSliderPreference.TGSLContract
 
 class ChatsPreferencesEntry : BasePreferencesEntry {
@@ -16,11 +16,11 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
             slider {
                 contract = object : TGSLContract {
                     override fun setValue(value: Int) {
-                        CatogramConfig.slider_stickerAmplifier = value
+                        SigmaGramConfig.slider_stickerAmplifier = value
                     }
 
                     override fun getPreferenceValue(): Int {
-                        return CatogramConfig.slider_stickerAmplifier
+                        return SigmaGramConfig.slider_stickerAmplifier
                     }
 
                     override fun getMin(): Int {
@@ -36,9 +36,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 title = LocaleController.getString("CG_TimeOnStick", R.string.CG_TimeOnStick)
 
                 contract({
-                    return@contract CatogramConfig.hideStickerTime
+                    return@contract SigmaGramConfig.hideStickerTime
                 }) {
-                    CatogramConfig.hideStickerTime = it
+                    SigmaGramConfig.hideStickerTime = it
                 }
             }
         }
@@ -49,9 +49,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_StreamVoip_Desc", R.string.CG_StreamVoip_Desc)
 
                 contract({
-                    return@contract CatogramConfig.useMediaStream
+                    return@contract SigmaGramConfig.useMediaStream
                 }) {
-                    CatogramConfig.useMediaStream = it
+                    SigmaGramConfig.useMediaStream = it
                 }
             }
 
@@ -60,9 +60,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_PlayVideo_Desc", R.string.CG_PlayVideo_Desc)
 
                 contract({
-                    return@contract CatogramConfig.playVideoOnVolume
+                    return@contract SigmaGramConfig.playVideoOnVolume
                 }) {
-                    CatogramConfig.playVideoOnVolume = it
+                    SigmaGramConfig.playVideoOnVolume = it
                 }
             }
 
@@ -71,9 +71,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_RearCam_Desc", R.string.CG_RearCam_Desc)
 
                 contract({
-                    return@contract CatogramConfig.rearCam
+                    return@contract SigmaGramConfig.rearCam
                 }) {
-                    CatogramConfig.rearCam = it
+                    SigmaGramConfig.rearCam = it
                 }
             }
 
@@ -82,9 +82,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_DisableCam_Desc", R.string.CG_DisableCam_Desc)
 
                 contract({
-                    return@contract CatogramConfig.disableAttachCamera
+                    return@contract SigmaGramConfig.disableAttachCamera
                 }) {
-                    CatogramConfig.disableAttachCamera = it
+                    SigmaGramConfig.disableAttachCamera = it
                 }
             }
 
@@ -93,9 +93,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_AudioFocus_Desc", R.string.CG_AudioFocus_Desc)
 
                 contract({
-                    return@contract CatogramConfig.audioFocus
+                    return@contract SigmaGramConfig.audioFocus
                 }) {
-                    CatogramConfig.audioFocus = it
+                    SigmaGramConfig.audioFocus = it
                 }
             }
 
@@ -104,9 +104,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_Proximity_Desc", R.string.CG_Proximity_Desc)
 
                 contract({
-                    return@contract CatogramConfig.enableProximity
+                    return@contract SigmaGramConfig.enableProximity
                 }) {
-                    CatogramConfig.enableProximity = it
+                    SigmaGramConfig.enableProximity = it
                 }
             }
 
@@ -121,27 +121,27 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                         Pair(3, "60"),
                     )
                 }, {
-                    return@contract when (CatogramConfig.sleepOp) {
+                    return@contract when (SigmaGramConfig.sleepOp) {
                         1 -> "10"
                         2 -> "30"
                         3 -> "60"
                         else -> "5"
                     }
                 }) {
-                    CatogramConfig.sleepOp = it
+                    SigmaGramConfig.sleepOp = it
 
-                    when (CatogramConfig.sleepOp) {
+                    when (SigmaGramConfig.sleepOp) {
                         0 -> {
-                            CatogramConfig.sleepTime = 5
+                            SigmaGramConfig.sleepTime = 5
                         }
                         1 -> {
-                            CatogramConfig.sleepTime = 10
+                            SigmaGramConfig.sleepTime = 10
                         }
                         2 -> {
-                            CatogramConfig.sleepTime = 30
+                            SigmaGramConfig.sleepTime = 30
                         }
                         3 -> {
-                            CatogramConfig.sleepTime = 60
+                            SigmaGramConfig.sleepTime = 60
                         }
                     }
                 }
@@ -152,9 +152,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_VoiceEnhancements_Desc", R.string.CG_VoiceEnhancements_Desc)
 
                 contract({
-                    return@contract CatogramConfig.voicesAgc
+                    return@contract SigmaGramConfig.voicesAgc
                 }) {
-                    CatogramConfig.voicesAgc = it
+                    SigmaGramConfig.voicesAgc = it
                 }
             }
 
@@ -163,9 +163,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_Voip_ForceEnhancements", R.string.CG_Voip_ForceEnhancements_Desc)
 
                 contract({
-                    return@contract CatogramConfig.voicesAgc
+                    return@contract SigmaGramConfig.voicesAgc
                 }) {
-                    CatogramConfig.voicesAgc = it
+                    SigmaGramConfig.voicesAgc = it
                 }
             }
 
@@ -174,9 +174,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_relaunch", R.string.CG_relaunch)
 
                 contract({
-                    return@contract CatogramConfig.hqVoice
+                    return@contract SigmaGramConfig.hqVoice
                 }) {
-                    CatogramConfig.hqVoice = it
+                    SigmaGramConfig.hqVoice = it
                 }
             }
         }
@@ -189,9 +189,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
 
 
                 contract({
-                    return@contract CatogramConfig.silenceNonContacts
+                    return@contract SigmaGramConfig.silenceNonContacts
                 }) {
-                    CatogramConfig.silenceNonContacts = it
+                    SigmaGramConfig.silenceNonContacts = it
                 }
             }
         }
@@ -201,9 +201,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 title = LocaleController.getString("CG_NewTabs_NoCounter", R.string.CG_NewTabs_NoCounter)
 
                 contract({
-                    return@contract CatogramConfig.newTabs_noUnread
+                    return@contract SigmaGramConfig.newTabs_noUnread
                 }) {
-                    CatogramConfig.newTabs_noUnread = it
+                    SigmaGramConfig.newTabs_noUnread = it
                 }
             }
 
@@ -217,13 +217,13 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                             Pair(2, LocaleController.getString("CG_TabIconMode_Replace", R.string.CG_TabIconMode_Replace))
                     )
                 }, {
-                    return@contract when (CatogramConfig.newTabs_iconsV2_mode) {
+                    return@contract when (SigmaGramConfig.newTabs_iconsV2_mode) {
                         1 -> LocaleController.getString("CG_TabIconMode_Append", R.string.CG_TabIconMode_Append)
                         2 -> LocaleController.getString("CG_TabIconMode_Replace", R.string.CG_TabIconMode_Replace)
                         else -> LocaleController.getString("CG_TabIconMode_Disabled", R.string.CG_TabIconMode_Disabled)
                     }
                 }) {
-                    CatogramConfig.newTabs_iconsV2_mode = it
+                    SigmaGramConfig.newTabs_iconsV2_mode = it
                     bf.messagesController.loadRemoteFilters(true)
                 }
             }
@@ -232,9 +232,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 title = LocaleController.getString("CG_NewTabs_RemoveAllChats", R.string.CG_NewTabs_RemoveAllChats)
 
                 contract({
-                    return@contract CatogramConfig.newTabs_hideAllChats
+                    return@contract SigmaGramConfig.newTabs_hideAllChats
                 }) {
-                    CatogramConfig.newTabs_hideAllChats = it
+                    SigmaGramConfig.newTabs_hideAllChats = it
                 }
             }
             switch {
@@ -242,9 +242,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_IgnoreArchivedChats_desc", R.string.CG_IgnoreArchivedChats_desc)
 
                 contract({
-                    return@contract CatogramConfig.ignoreArchivedChannels
+                    return@contract SigmaGramConfig.ignoreArchivedChannels
                 }) {
-                    CatogramConfig.ignoreArchivedChannels = it
+                    SigmaGramConfig.ignoreArchivedChannels = it
                 }
             }
         }
@@ -257,9 +257,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 divider = true
 
                 contract({
-                    return@contract CatogramConfig.mentionByName
+                    return@contract SigmaGramConfig.mentionByName
                 }) {
-                    CatogramConfig.mentionByName = it
+                    SigmaGramConfig.mentionByName = it
                 }
             }
 
@@ -268,9 +268,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_archiveOnPull_Desc", R.string.CG_ArchiveOnPull_Desc)
 
                 contract({
-                    return@contract CatogramConfig.archiveOnPull
+                    return@contract SigmaGramConfig.archiveOnPull
                 }) {
-                    CatogramConfig.archiveOnPull = it
+                    SigmaGramConfig.archiveOnPull = it
                 }
             }
 
@@ -279,9 +279,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_syncPins_Desc", R.string.CG_SyncPins_Desc)
 
                 contract({
-                    return@contract CatogramConfig.syncPins
+                    return@contract SigmaGramConfig.syncPins
                 }) {
-                    CatogramConfig.syncPins = it
+                    SigmaGramConfig.syncPins = it
                 }
             }
 
@@ -289,9 +289,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 title = LocaleController.getString("CG_HideKbdOnScroll", R.string.CG_HideKbdOnScroll)
 
                 contract({
-                    return@contract CatogramConfig.hideKeyboardOnScroll
+                    return@contract SigmaGramConfig.hideKeyboardOnScroll
                 }) {
-                    CatogramConfig.hideKeyboardOnScroll = it
+                    SigmaGramConfig.hideKeyboardOnScroll = it
                 }
             }
 
@@ -299,9 +299,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 title = LocaleController.getString("CG_ForwardMsgDate", R.string.CG_ForwardMsgDate)
 
                 contract({
-                    return@contract CatogramConfig.msgForwardDate
+                    return@contract SigmaGramConfig.msgForwardDate
                 }) {
-                    CatogramConfig.msgForwardDate = it
+                    SigmaGramConfig.msgForwardDate = it
                 }
             }
 
@@ -310,9 +310,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_GhostMode_Desc", R.string.CG_GhostMode_Desc)
 
                 contract({
-                    return@contract CatogramConfig.ghostMode
+                    return@contract SigmaGramConfig.ghostMode
                 }) {
-                    CatogramConfig.ghostMode = it
+                    SigmaGramConfig.ghostMode = it
                 }
             }*/
 
@@ -326,13 +326,13 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                             Pair(2, LocaleController.getString("CG_MsgSlideAction_Share", R.string.CG_MsgSlideAction_Share))
                     )
                 }, {
-                    return@contract when (CatogramConfig.messageSlideAction) {
+                    return@contract when (SigmaGramConfig.messageSlideAction) {
                         1 -> LocaleController.getString("CG_MsgSlideAction_Save", R.string.CG_MsgSlideAction_Save)
                         2 -> LocaleController.getString("CG_MsgSlideAction_Share", R.string.CG_MsgSlideAction_Share)
                         else -> LocaleController.getString("CG_MsgSlideAction_Reply", R.string.CG_MsgSlideAction_Reply)
                     }
                 }) {
-                    CatogramConfig.messageSlideAction = it
+                    SigmaGramConfig.messageSlideAction = it
                     Theme.chat_replyIconDrawable = bf.parentActivity.resources.getDrawable(CGFeatureHooks.getReplyIconDrawable())
                     Theme.setDrawableColorByKey(Theme.chat_replyIconDrawable, Theme.key_chat_serviceIcon)
                 }
@@ -345,9 +345,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_NewAvaHeader_NoEdgeTapping_Desc", R.string.CG_NewAvaHeader_NoEdgeTapping_Desc)
 
                 contract({
-                    return@contract CatogramConfig.profiles_noEdgeTapping
+                    return@contract SigmaGramConfig.profiles_noEdgeTapping
                 }) {
-                    CatogramConfig.profiles_noEdgeTapping = it
+                    SigmaGramConfig.profiles_noEdgeTapping = it
                 }
             }
 
@@ -356,18 +356,18 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_EnableSwipePIP_Desc", R.string.CG_EnableSwipePIP_Desc)
 
                 contract({
-                    return@contract CatogramConfig.enableSwipeToPIP
+                    return@contract SigmaGramConfig.enableSwipeToPIP
                 }) {
-                    CatogramConfig.enableSwipeToPIP = it
+                    SigmaGramConfig.enableSwipeToPIP = it
                 }
             }
 
             switch {
                 title = LocaleController.getString("CG_ShowDC", R.string.CG_ShowDC)
                 contract({
-                    return@contract CatogramConfig.showDc
+                    return@contract SigmaGramConfig.showDc
                 }) {
-                    CatogramConfig.showDc = it
+                    SigmaGramConfig.showDc = it
                 }
             }
             switch {
@@ -375,9 +375,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_NewAvaHeader_OpenOnTap_Desc", R.string.CG_NewAvaHeader_OpenOnTap_Desc)
 
                 contract({
-                    return@contract CatogramConfig.profiles_openOnTap
+                    return@contract SigmaGramConfig.profiles_openOnTap
                 }) {
-                    CatogramConfig.profiles_openOnTap = it
+                    SigmaGramConfig.profiles_openOnTap = it
                 }
             }
 
@@ -386,9 +386,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_NewAvaHeader_AlwaysExpand_Desc", R.string.CG_NewAvaHeader_AlwaysExpand_Desc)
 
                 contract({
-                    return@contract CatogramConfig.profiles_alwaysExpand
+                    return@contract SigmaGramConfig.profiles_alwaysExpand
                 }) {
-                    CatogramConfig.profiles_alwaysExpand = it
+                    SigmaGramConfig.profiles_alwaysExpand = it
                 }
             }
         }
@@ -413,7 +413,7 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                             Pair(12, LocaleController.getString("CG_TrLang_Serbian", R.string.CG_TrLang_Serbian)),
                     )
                 }, {
-                    return@contract when (CatogramConfig.translateOptions) {
+                    return@contract when (SigmaGramConfig.translateOptions) {
                         1 -> LocaleController.getString("CG_TrLang_Russian", R.string.CG_TrLang_Russian)
                         2 -> LocaleController.getString("CG_TrLang_French", R.string.CG_TrLang_French)
                         3 -> LocaleController.getString("CG_TrLang_Italian", R.string.CG_TrLang_Italian)
@@ -429,46 +429,46 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                         else -> LocaleController.getString("CG_TrLang_English", R.string.CG_TrLang_English)
                     }
                 }) {
-                    CatogramConfig.translateOptions = it
-                    when (CatogramConfig.translateOptions) {
+                    SigmaGramConfig.translateOptions = it
+                    when (SigmaGramConfig.translateOptions) {
                         0 -> {
-                            CatogramConfig.trLang = "en"
+                            SigmaGramConfig.trLang = "en"
                         }
                         1 -> {
-                            CatogramConfig.trLang = "ru"
+                            SigmaGramConfig.trLang = "ru"
                         }
                         2 -> {
-                            CatogramConfig.trLang = "fr"
+                            SigmaGramConfig.trLang = "fr"
                         }
                         3 -> {
-                            CatogramConfig.trLang = "it"
+                            SigmaGramConfig.trLang = "it"
                         }
                         4 -> {
-                            CatogramConfig.trLang = "es"
+                            SigmaGramConfig.trLang = "es"
                         }
                         5 -> {
-                            CatogramConfig.trLang = "zh"
+                            SigmaGramConfig.trLang = "zh"
                         }
                         6 -> {
-                            CatogramConfig.trLang = "ja"
+                            SigmaGramConfig.trLang = "ja"
                         }
                         7 -> {
-                            CatogramConfig.trLang = "hi"
+                            SigmaGramConfig.trLang = "hi"
                         }
                         8 -> {
-                            CatogramConfig.trLang = "de"
+                            SigmaGramConfig.trLang = "de"
                         }
                         9 -> {
-                            CatogramConfig.trLang = "id"
+                            SigmaGramConfig.trLang = "id"
                         }
                         10 -> {
-                            CatogramConfig.trLang = "bs"
+                            SigmaGramConfig.trLang = "bs"
                         }
                         11 -> {
-                            CatogramConfig.trLang = "hr"
+                            SigmaGramConfig.trLang = "hr"
                         }
                         12 -> {
-                            CatogramConfig.trLang = "sr"
+                            SigmaGramConfig.trLang = "sr"
                         }
                     }
                 }

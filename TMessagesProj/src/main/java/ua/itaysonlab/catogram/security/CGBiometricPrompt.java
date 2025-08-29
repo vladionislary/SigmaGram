@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.security;
+package ua.itaysonlab.sigmagram.security;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

@@ -1,3 +1,3 @@
-package ua.itaysonlab.catogram.voicerec
+package ua.itaysonlab.sigmagram.voicerec
 
 object WitAiBridge

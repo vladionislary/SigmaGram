@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by iTaysonLab -->
-    <string name="AdvancedSettings">Настройки Catogram</string>
+    <string name="AdvancedSettings">Настройки SigmaGram</string>
     <string name="AS_Header_Appearance">Внешний вид</string>
     <string name="AS_HideUserPhone">Скрыть номер телефона</string>
     <string name="AS_HideUserPhoneSummary">в шторке и настройках</string>
@@ -20,10 +20,10 @@
     <string name="AS_Hidden">Скрыто</string>
     <string name="AS_UserID">ID пользователя</string>
     <string name="AS_GroupID">ID группы</string>
-    <string name="CatogramVersion">Catogram %1$s</string>
+    <string name="SigmaGramVersion">SigmaGram %1$s</string>
     <string name="AV_ThemeBased">Динамическая</string>
     <string name="AS_Header_Categories">Категории</string>
-    <string name="AS_Header_About">О Catogram</string>
+    <string name="AS_Header_About">О SigmaGram</string>
     <string name="CG_AboutDesc">Экспериметальная модификация официального приложения Telegram.</string>
     <string name="CG_Donate">Поддержать разработку</string>
     <string name="CG_DonatDesc">Помогите нам купить PS5</string>

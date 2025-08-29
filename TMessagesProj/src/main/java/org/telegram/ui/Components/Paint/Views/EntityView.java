@@ -57,7 +57,7 @@ public class EntityView extends FrameLayout {
 
                 recognizedLongPress = true;
                 if (delegate != null) {
-                    ua.itaysonlab.extras.CatogramExtras.performHapticFeedback(EntityView.this, HapticFeedbackConstants.LONG_PRESS);
+                    ua.itaysonlab.extras.SigmaGramExtras.performHapticFeedback(EntityView.this, HapticFeedbackConstants.LONG_PRESS);
                     delegate.onEntityLongClicked(EntityView.this);
                 }
             }

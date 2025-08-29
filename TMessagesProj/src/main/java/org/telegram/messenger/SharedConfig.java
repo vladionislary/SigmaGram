@@ -36,7 +36,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class SharedConfig {
 
@@ -1063,7 +1063,7 @@ public class SharedConfig {
     public static void checkSaveToGalleryFiles() {
         Utilities.globalQueue.postRunnable(() -> {
             try {
-                File telegramPath = new File(CatogramConfig.INSTANCE.getPrivateDir() ? ApplicationLoader.applicationContext.getExternalFilesDir(null) : Environment.getExternalStorageDirectory(), "Telegram");
+                File telegramPath = new File(SigmaGramConfig.INSTANCE.getPrivateDir() ? ApplicationLoader.applicationContext.getExternalFilesDir(null) : Environment.getExternalStorageDirectory(), "Telegram");
                 File imagePath = new File(telegramPath, "Telegram Images");
                 imagePath.mkdir();
                 File videoPath = new File(telegramPath, "Telegram Video");

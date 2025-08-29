@@ -100,9 +100,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import ua.itaysonlab.CatogramLogger;
-import ua.itaysonlab.catogram.CatogramConfig;
-import ua.itaysonlab.catogram.SleepHelper;
+import ua.itaysonlab.SigmaGramLogger;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
+import ua.itaysonlab.sigmagram.SleepHelper;
 
 public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
 
@@ -1482,14 +1482,14 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             );
             AlarmManager alarmManager = (AlarmManager) ApplicationLoader.applicationContext.getSystemService(Context.ALARM_SERVICE);
 
-            if (!CatogramConfig.INSTANCE.getSleepTimer()) {
-                CatogramLogger.d("alarmcg", Boolean.toString(CatogramConfig.INSTANCE.getSleepTimer()));
-                alarmManager.set(AlarmManager.RTC_WAKEUP, TimeUnit.MINUTES.toMillis(CatogramConfig.INSTANCE.getSleepTime()), pendingIntent);
-                CatogramConfig.INSTANCE.setSleepTimer(true);
+            if (!SigmaGramConfig.INSTANCE.getSleepTimer()) {
+                SigmaGramLogger.d("alarmcg", Boolean.toString(SigmaGramConfig.INSTANCE.getSleepTimer()));
+                alarmManager.set(AlarmManager.RTC_WAKEUP, TimeUnit.MINUTES.toMillis(SigmaGramConfig.INSTANCE.getSleepTime()), pendingIntent);
+                SigmaGramConfig.INSTANCE.setSleepTimer(true);
             }
             else {
                 alarmManager.cancel(pendingIntent);
-                CatogramConfig.INSTANCE.setSleepTimer(false);
+                SigmaGramConfig.INSTANCE.setSleepTimer(false);
             }
         }
     }

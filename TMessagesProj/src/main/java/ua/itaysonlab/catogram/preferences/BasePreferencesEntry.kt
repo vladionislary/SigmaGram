@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.preferences
+package ua.itaysonlab.sigmagram.preferences
 
 import org.telegram.ui.ActionBar.BaseFragment
 import ua.itaysonlab.tgkit.preference.TGKitSettings

@@ -33,7 +33,7 @@ public abstract class BaseCell extends ViewGroup {
         public void run() {
             if (checkingForLongPress && getParent() != null && currentPressCount == pressCount) {
                 checkingForLongPress = false;
-                ua.itaysonlab.extras.CatogramExtras.performHapticFeedback(BaseCell.this, HapticFeedbackConstants.LONG_PRESS);
+                ua.itaysonlab.extras.SigmaGramExtras.performHapticFeedback(BaseCell.this, HapticFeedbackConstants.LONG_PRESS);
                 if (onLongPress()) {
                     MotionEvent event = MotionEvent.obtain(0, 0, MotionEvent.ACTION_CANCEL, 0, 0, 0);
                     onTouchEvent(event);

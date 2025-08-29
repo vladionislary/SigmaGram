@@ -196,7 +196,7 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
                     if (action == MotionEvent.ACTION_DOWN) {
                         pressed = true;
                     } else {
-                        ua.itaysonlab.extras.CatogramExtras.performHapticFeedback(this, HapticFeedbackConstants.KEYBOARD_TAP);
+                        ua.itaysonlab.extras.SigmaGramExtras.performHapticFeedback(this, HapticFeedbackConstants.KEYBOARD_TAP);
                         showOptionsForTheme(themeInfo);
                     }
                 }

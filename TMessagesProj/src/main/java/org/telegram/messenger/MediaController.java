@@ -96,8 +96,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.CountDownLatch;
 
-import ua.itaysonlab.catogram.CatogramConfig;
-import ua.itaysonlab.catogram.voicerec.InstantVideoBridge;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
+import ua.itaysonlab.sigmagram.voicerec.InstantVideoBridge;
 
 public class MediaController implements AudioManager.OnAudioFocusChangeListener, NotificationCenter.NotificationCenterDelegate, SensorEventListener {
 
@@ -563,7 +563,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     private ArrayList<ByteBuffer> recordBuffers = new ArrayList<>();
     private ByteBuffer fileBuffer;
     public int recordBufferSize = 1280;
-    public int sampleRate = CatogramConfig.INSTANCE.getHqVoice() ? 48000 : 16000;
+    public int sampleRate = SigmaGramConfig.INSTANCE.getHqVoice() ? 48000 : 16000;
     private int sendAfterDone;
     private boolean sendAfterDoneNotify;
     private int sendAfterDoneScheduleDate;
@@ -887,7 +887,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 }
                 proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
                 PowerManager powerManager = (PowerManager) ApplicationLoader.applicationContext.getSystemService(Context.POWER_SERVICE);
-                proximityWakeLock = CatogramConfig.INSTANCE.getEnableProximity() ? powerManager.newWakeLock(0x00000020, "proximity") : null;
+                proximityWakeLock = SigmaGramConfig.INSTANCE.getEnableProximity() ? powerManager.newWakeLock(0x00000020, "proximity") : null;
             } catch (Exception e) {
                 FileLog.e(e);
             }
@@ -1404,7 +1404,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     }
 
     private boolean isNearToSensor(float value) {
-        return CatogramConfig.INSTANCE.getEnableProximity() && value < 5.0f && value != proximitySensor.getMaximumRange();
+        return SigmaGramConfig.INSTANCE.getEnableProximity() && value < 5.0f && value != proximitySensor.getMaximumRange();
     }
 
     public boolean isRecordingOrListeningByProximity() {
@@ -2386,7 +2386,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     private void checkAudioFocus(MessageObject messageObject) {
         int neededAudioFocus;
         if (messageObject.isVoice() || messageObject.isVideo() || messageObject.isRoundVideo()) {
-            if (CatogramConfig.INSTANCE.getAudioFocus()) {
+            if (SigmaGramConfig.INSTANCE.getAudioFocus()) {
                 neededAudioFocus = 3;
             } else {
                 neededAudioFocus = 2;
@@ -3430,7 +3430,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         requestAudioFocus(true);
 
         try {
-            ua.itaysonlab.extras.CatogramExtras.performHapticFeedback(feedbackView, HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
+            ua.itaysonlab.extras.SigmaGramExtras.performHapticFeedback(feedbackView, HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
         } catch (Exception ignore) {
 
         }
@@ -3621,7 +3621,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 stopRecordingInternal(0, false, 0);
             }
             try {
-                ua.itaysonlab.extras.CatogramExtras.performHapticFeedback(feedbackView, HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
+                ua.itaysonlab.extras.SigmaGramExtras.performHapticFeedback(feedbackView, HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
             } catch (Exception ignore) {
 
             }

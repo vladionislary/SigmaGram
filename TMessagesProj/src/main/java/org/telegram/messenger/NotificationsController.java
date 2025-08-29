@@ -71,8 +71,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 
-import ua.itaysonlab.catogram.CGFeatureHooks;
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.CGFeatureHooks;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class NotificationsController extends BaseController {
 
@@ -3481,7 +3481,7 @@ public class NotificationsController extends BaseController {
                 notifyDisabled = true;
             }
 
-            if (CatogramConfig.INSTANCE.getSilenceNonContacts() && getContactsController().contactsDict.get(userId) == null) {
+            if (SigmaGramConfig.INSTANCE.getSilenceNonContacts() && getContactsController().contactsDict.get(userId) == null) {
                 notifyDisabled = true;
             }
 

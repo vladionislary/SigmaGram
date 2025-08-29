@@ -897,7 +897,7 @@ public class ChatRightsEditActivity extends BaseFragment {
                 listView.smoothScrollToPosition(rankRow);
                 Vibrator v = (Vibrator) getParentActivity().getSystemService(Context.VIBRATOR_SERVICE);
                 if (v != null) {
-                    ua.itaysonlab.extras.CatogramExtras.vibrate(v, 200);
+                    ua.itaysonlab.extras.SigmaGramExtras.vibrate(v, 200);
                 }
                 RecyclerView.ViewHolder holder = listView.findViewHolderForAdapterPosition(rankHeaderRow);
                 if (holder != null) {

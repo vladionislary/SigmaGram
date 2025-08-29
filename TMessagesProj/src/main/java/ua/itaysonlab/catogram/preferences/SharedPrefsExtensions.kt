@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.preferences.ktx
+package ua.itaysonlab.sigmagram.preferences.ktx
 
 import android.content.SharedPreferences
 import kotlin.properties.ReadWriteProperty

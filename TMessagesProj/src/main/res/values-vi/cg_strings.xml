@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by iTaysonLab -->
-    <string name="AdvancedSettings">Tuỳ chỉnh Catogram</string>
+    <string name="AdvancedSettings">Tuỳ chỉnh SigmaGram</string>
     <string name="AS_Header_Appearance">Giao diện</string>
     <string name="AS_HideUserPhone">Ẩn số điện thoại</string>
     <string name="AS_HideUserPhoneSummary">trong ngăn kéo và cài đặt</string>
@@ -20,10 +20,10 @@
     <string name="AS_Hidden">Ẩn</string>
     <string name="AS_UserID">ID Người dùng</string>
     <string name="AS_GroupID">ID Nhóm</string>
-    <string name="CatogramVersion">Catogram %1$s</string>
+    <string name="SigmaGramVersion">SigmaGram %1$s</string>
     <string name="AV_ThemeBased">Động lực</string>
     <string name="AS_Header_Categories">Danh mục</string>
-    <string name="AS_Header_About">Về Catogram</string>
+    <string name="AS_Header_About">Về SigmaGram</string>
     <string name="CG_AboutDesc">Một bản sửa đổi thử nghiệm của ứng dụng Telegram.</string>
     <string name="CG_Donate">Donate</string>
     <string name="CG_DonatDesc">Giúp chúng tôi mua PS5</string>

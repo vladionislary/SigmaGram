@@ -1,9 +1,9 @@
-package ua.itaysonlab.catogram
+package ua.itaysonlab.sigmagram
 
-import ua.itaysonlab.catogram.preferences.*
+import ua.itaysonlab.sigmagram.preferences.*
 import ua.itaysonlab.tgkit.TGKitSettingsFragment
 
-object CatogramPreferencesNavigator {
+object SigmaGramPreferencesNavigator {
     @JvmStatic
     fun createMainMenu() = TGKitSettingsFragment(MainPreferencesEntry())
 

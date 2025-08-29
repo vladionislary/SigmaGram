@@ -45,7 +45,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ChatActivity;
 import org.telegram.ui.ProfileActivity;
 
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class ChatAvatarContainer extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
 
@@ -163,7 +163,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
 
         if (parentFragment != null && parentFragment.getChatMode() == 0) {
             if (!parentFragment.isThreadChat() && !UserObject.isReplyUser(parentFragment.getCurrentUser())) {
-                setOnClickListener(v -> openProfile(CatogramConfig.INSTANCE.getProfiles_alwaysExpand()));
+                setOnClickListener(v -> openProfile(SigmaGramConfig.INSTANCE.getProfiles_alwaysExpand()));
             }
 
             TLRPC.Chat chat = parentFragment.getCurrentChat();

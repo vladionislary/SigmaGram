@@ -45,7 +45,7 @@ import org.telegram.ui.Cells.ChatMessageCell;
 
 import java.util.ArrayList;
 
-import ua.itaysonlab.catogram.CGFeatureHooks;
+import ua.itaysonlab.sigmagram.CGFeatureHooks;
 
 public class ForwardingPreviewView extends FrameLayout {
 

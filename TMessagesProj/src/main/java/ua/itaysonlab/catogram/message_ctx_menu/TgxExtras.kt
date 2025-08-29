@@ -1,9 +1,9 @@
-package ua.itaysonlab.catogram.message_ctx_menu
+package ua.itaysonlab.sigmagram.message_ctx_menu
 
 import android.app.Activity
 import org.telegram.messenger.LocaleController
 import org.telegram.messenger.MessageObject
-import ua.itaysonlab.catogram.CatogramConfig
+import ua.itaysonlab.sigmagram.SigmaGramConfig
 import ua.itaysonlab.redesign.BaseActionedSwipeFragment
 import ua.itaysonlab.redesign.sheet.TgxMessageMenuSheetFragment
 import ua.itaysonlab.redesign.slides.TgxMessageMenuFragment
@@ -41,7 +41,7 @@ object TgxExtras {
 
     @JvmStatic
     fun createForwardTimeName(obj: MessageObject, orig: CharSequence): String {
-        if (!CatogramConfig.msgForwardDate) return orig.toString()
+        if (!SigmaGramConfig.msgForwardDate) return orig.toString()
         //return orig.toString()
         return "$orig (${LocaleController.formatDate(obj.messageOwner.fwd_from.date.toLong())})"
     }

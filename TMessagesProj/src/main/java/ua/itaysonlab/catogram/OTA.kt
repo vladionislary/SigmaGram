@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram
+package ua.itaysonlab.sigmagram
 
 import android.app.*
 import android.content.BroadcastReceiver
@@ -19,8 +19,8 @@ import okhttp3.Request
 import org.json.JSONObject
 import org.telegram.messenger.LocaleController
 import org.telegram.messenger.R
-import ua.itaysonlab.catogram.translate.impl.GoogleTranslateImpl.translateText
-import ua.itaysonlab.extras.CatogramExtras
+import ua.itaysonlab.sigmagram.translate.impl.GoogleTranslateImpl.translateText
+import ua.itaysonlab.extras.SigmaGramExtras
 
 
 object OTA : CoroutineScope by MainScope() {
@@ -40,12 +40,12 @@ object OTA : CoroutineScope by MainScope() {
         launch(handler) {
             try {
                 val request: Request =
-                        Request.Builder().url("https://api.github.com/repos/catogram/catogram/releases/latest").build()
+                        Request.Builder().url("https://api.github.com/repos/sigmagram/sigmagram/releases/latest").build()
                 withContext(Dispatchers.IO) {
                     val response = OkHttpClient().newCall(request).execute()
                     parseddString = response.body!!.string()
                     val parsedString = JSONObject(parseddString)
-                    if (parsedString.getString("name") != CatogramExtras.CG_VERSION) {
+                    if (parsedString.getString("name") != SigmaGramExtras.CG_VERSION) {
                         version = parsedString.getString("name")
                         changelog = parsedString.getString("body")
                         needDownload = true
@@ -152,10 +152,10 @@ object OTA : CoroutineScope by MainScope() {
     fun downloadApk(context: Context) {
         val notificationManager = NotificationManagerCompat.from(context)
         notificationManager.cancel(1337)
-        val request = DownloadManager.Request(Uri.parse("https://github.com/catogram/catogram/releases/latest/download/app.apk"))
+        val request = DownloadManager.Request(Uri.parse("https://github.com/sigmagram/sigmagram/releases/latest/download/app.apk"))
 
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE or DownloadManager.Request.NETWORK_WIFI)
-        request.setTitle("Catogram v$version")
+        request.setTitle("SigmaGram v$version")
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
         request.setDestinationInExternalFilesDir(context, Environment.DIRECTORY_DOWNLOADS, "ota.apk")
 

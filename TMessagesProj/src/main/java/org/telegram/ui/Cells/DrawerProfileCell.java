@@ -53,8 +53,8 @@ import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
 import org.telegram.ui.Components.SnowflakesEffect;
 
-import ua.itaysonlab.catogram.CatogramConfig;
-import ua.itaysonlab.extras.CatogramExtras;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
+import ua.itaysonlab.extras.SigmaGramExtras;
 
 public class DrawerProfileCell extends FrameLayout {
 
@@ -256,8 +256,8 @@ public class DrawerProfileCell extends FrameLayout {
         }
         nameTextView.setTextColor(Theme.getColor(Theme.key_chats_menuName));
 
-        if (CatogramConfig.INSTANCE.getDrawerAvatar() && CatogramExtras.currentAccountBitmap != null) {
-            backgroundDrawable = CatogramExtras.currentAccountBitmap;
+        if (SigmaGramConfig.INSTANCE.getDrawerAvatar() && SigmaGramExtras.currentAccountBitmap != null) {
+            backgroundDrawable = SigmaGramExtras.currentAccountBitmap;
             useImageBackground = true;
         }
 
@@ -272,8 +272,8 @@ public class DrawerProfileCell extends FrameLayout {
                 darkBackColor = Theme.getColor(Theme.key_listSelector);
             } else if (backgroundDrawable instanceof BitmapDrawable) {
                 Bitmap bitmap = ((BitmapDrawable) backgroundDrawable).getBitmap().copy(Bitmap.Config.ARGB_8888, true);
-                if (CatogramConfig.INSTANCE.getDrawerBlur()) bitmap = Utilities.blurWallpaper(bitmap);
-                if (CatogramConfig.INSTANCE.getDrawerDarken()) CatogramExtras.darkenBitmap(bitmap);
+                if (SigmaGramConfig.INSTANCE.getDrawerBlur()) bitmap = Utilities.blurWallpaper(bitmap);
+                if (SigmaGramConfig.INSTANCE.getDrawerDarken()) SigmaGramExtras.darkenBitmap(bitmap);
                 float scaleX = (float) getMeasuredWidth() / (float) bitmap.getWidth();
                 float scaleY = (float) getMeasuredHeight() / (float) bitmap.getHeight();
                 float scale = Math.max(scaleX, scaleY);
@@ -344,7 +344,7 @@ public class DrawerProfileCell extends FrameLayout {
         accountsShown = accounts;
         setArrowState(false);
         nameTextView.setText(UserObject.getUserName(user));
-        if (CatogramConfig.INSTANCE.getHidePhoneNumber()) {
+        if (SigmaGramConfig.INSTANCE.getHidePhoneNumber()) {
             phoneTextView.setText(user.username != null ? "@" + user.username : String.valueOf(AccountInstance.getInstance(UserConfig.selectedAccount).getUserConfig().clientUserId));
         } else {
             phoneTextView.setText(PhoneFormat.getInstance().format("+" + user.phone));
@@ -355,7 +355,7 @@ public class DrawerProfileCell extends FrameLayout {
 
         applyBackground(true);
 
-        CatogramExtras.setAccountBitmap(user);
+        SigmaGramExtras.setAccountBitmap(user);
     }
 
     public String applyBackground(boolean force) {

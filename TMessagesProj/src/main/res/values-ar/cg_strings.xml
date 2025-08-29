@@ -21,10 +21,10 @@
     <string name="AS_Hidden">مخفي</string>
     <string name="AS_UserID">ID المستخدم</string>
     <string name="AS_GroupID">ID المجموعة</string>
-    <string name="CatogramVersion">Catogram %1$s</string>
+    <string name="SigmaGramVersion">SigmaGram %1$s</string>
     <string name="AV_ThemeBased">ديناميكي</string>
     <string name="AS_Header_Categories">التصنيفات</string>
-    <string name="AS_Header_About">حول Catogram</string>
+    <string name="AS_Header_About">حول SigmaGram</string>
     <string name="CG_AboutDesc">تعديلات تلجرام تجريبية.</string>
     <string name="CG_Donate">تبرع</string>
     <string name="CG_DonatDesc">ساعدنا علي شراء PS5</string>

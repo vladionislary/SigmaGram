@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.voicerec
+package ua.itaysonlab.sigmagram.voicerec
 
 import android.media.AudioFormat
 import android.media.AudioRecord
@@ -6,7 +6,7 @@ import android.media.audiofx.AcousticEchoCanceler
 import android.media.audiofx.AutomaticGainControl
 import android.media.audiofx.NoiseSuppressor
 import android.os.Build
-import ua.itaysonlab.catogram.CatogramConfig
+import ua.itaysonlab.sigmagram.SigmaGramConfig
 
 object InstantVideoBridge {
 
@@ -33,7 +33,7 @@ object InstantVideoBridge {
 
     @JvmStatic
     fun initVoiceEnhancements(audioRecord: AudioRecord) {
-        if (!CatogramConfig.voicesAgc) return
+        if (!SigmaGramConfig.voicesAgc) return
 
         if (AutomaticGainControl.isAvailable()) {
             agc = AutomaticGainControl.create(audioRecord.audioSessionId)

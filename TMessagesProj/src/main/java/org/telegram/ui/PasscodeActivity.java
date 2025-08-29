@@ -584,7 +584,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         }
         Vibrator v = (Vibrator) getParentActivity().getSystemService(Context.VIBRATOR_SERVICE);
         if (v != null) {
-            ua.itaysonlab.extras.CatogramExtras.vibrate(v, 200);
+            ua.itaysonlab.extras.SigmaGramExtras.vibrate(v, 200);
         }
         AndroidUtilities.shakeView(titleTextView, 2, 0);
     }

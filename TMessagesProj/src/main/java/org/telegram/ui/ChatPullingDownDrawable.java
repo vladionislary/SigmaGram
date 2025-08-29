@@ -36,7 +36,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 
 import java.util.ArrayList;
 
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class ChatPullingDownDrawable implements NotificationCenter.NotificationCenterDelegate {
 
@@ -527,7 +527,7 @@ public class ChatPullingDownDrawable implements NotificationCenter.NotificationC
         for (int i = 0; i < dialogs.size(); i++) {
             TLRPC.Dialog dialog = dialogs.get(i);
             TLRPC.Chat chat = messagesController.getChat(-dialog.id);
-            if (folderId != 0 && CatogramConfig.INSTANCE.getIgnoreArchivedChannels()) {
+            if (folderId != 0 && SigmaGramConfig.INSTANCE.getIgnoreArchivedChannels()) {
                 return null;
             }
             if (chat != null && dialog.id != currentDialogId && dialog.unread_count > 0 && DialogObject.isChannel(dialog) && !chat.megagroup && !messagesController.isPromoDialog(dialog.id, false)) {

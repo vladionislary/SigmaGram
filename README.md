@@ -1,12 +1,12 @@
 <img src="https://avatars.githubusercontent.com/u/76093575?s=200&v=4" width="150" align="right"/>
 
-## Catogram
+## SigmaGram
 
 Experimental telegram client based on [official Android sources](https://github.com/DrKLO/Telegram)
 
-[![Channel](https://img.shields.io/badge/Channel-Telegram-blue.svg)](https://t.me/catogram)
+[![Channel](https://img.shields.io/badge/Channel-Telegram-blue.svg)](https://t.me/sigmagram)
 
-[![Chat](https://img.shields.io/badge/Chat-Telegram-blue.svg)](https://t.me/catogram_en)
+[![Chat](https://img.shields.io/badge/Chat-Telegram-blue.svg)](https://t.me/sigmagram_en)
 
 
  ## Features:

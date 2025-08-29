@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram
+package ua.itaysonlab.sigmagram
 
 import android.os.CountDownTimer
 import android.view.View
@@ -24,7 +24,7 @@ object CGFeatureHooks {
     @JvmStatic
     fun switchNoAuthor(b: Boolean) {
         // ...
-        CatogramConfig.noAuthorship = b
+        SigmaGramConfig.noAuthorship = b
     }
 
     private var currentPopup: ActionBarPopupWindow? = null
@@ -33,7 +33,7 @@ object CGFeatureHooks {
     fun showForwardMenu(sa: ShareAlert, field: FrameLayout) {
         currentPopup = CGFeatureJavaHooks.createPopupWindow(sa.container, field, sa.context, listOf(
                 CGFeatureJavaHooks.PopupItem(
-                        if (CatogramConfig.forwardNoAuthorship) {
+                        if (SigmaGramConfig.forwardNoAuthorship) {
                             LocaleController.getString("CG_FwdMenu_DisableNoForward", R.string.CG_FwdMenu_DisableNoForward)
                         } else {
                             LocaleController.getString("CG_FwdMenu_EnableNoForward", R.string.CG_FwdMenu_EnableNoForward)
@@ -41,12 +41,12 @@ object CGFeatureHooks {
                         R.drawable.msg_forward
                 ) {
                     // Toggle!
-                    CatogramConfig.forwardNoAuthorship = !CatogramConfig.forwardNoAuthorship
+                    SigmaGramConfig.forwardNoAuthorship = !SigmaGramConfig.forwardNoAuthorship
                     currentPopup?.dismiss()
                     currentPopup = null
                 },
             CGFeatureJavaHooks.PopupItem(
-                if (CatogramConfig.forwardWithoutCaptions) {
+                if (SigmaGramConfig.forwardWithoutCaptions) {
                     LocaleController.getString("CG_FwdMenu_EnableCaptions", R.string.CG_FwdMenu_EnableCaptions)
                 } else {
                     LocaleController.getString("CG_FwdMenu_DisableCaptions", R.string.CG_FwdMenu_DisableCaptions)
@@ -54,12 +54,12 @@ object CGFeatureHooks {
                 R.drawable.msg_edit
             ) {
                 // Toggle!
-                CatogramConfig.forwardWithoutCaptions = !CatogramConfig.forwardWithoutCaptions
+                SigmaGramConfig.forwardWithoutCaptions = !SigmaGramConfig.forwardWithoutCaptions
                 currentPopup?.dismiss()
                 currentPopup = null
             },
             CGFeatureJavaHooks.PopupItem(
-                if (CatogramConfig.forwardNotify) {
+                if (SigmaGramConfig.forwardNotify) {
                     LocaleController.getString("CG_FwdMenu_NoNotify", R.string.CG_FwdMenu_NoNotify)
                 } else {
                     LocaleController.getString("CG_FwdMenu_Notify", R.string.CG_FwdMenu_Notify)
@@ -67,7 +67,7 @@ object CGFeatureHooks {
                 R.drawable.input_notify_on
             ) {
                 // Toggle!
-                CatogramConfig.forwardNotify = !CatogramConfig.forwardNotify
+                SigmaGramConfig.forwardNotify = !SigmaGramConfig.forwardNotify
                 currentPopup?.dismiss()
                 currentPopup = null
             },
@@ -76,12 +76,12 @@ object CGFeatureHooks {
 
     @JvmStatic
     fun getProperNotificationIcon(): Int {
-        return if (CatogramConfig.oldNotificationIcon) R.drawable.notification else R.drawable.cg_notification
+        return if (SigmaGramConfig.oldNotificationIcon) R.drawable.notification else R.drawable.cg_notification
     }
 
     @JvmStatic
     fun getReplyIconDrawable(): Int {
-        return when (CatogramConfig.messageSlideAction) {
+        return when (SigmaGramConfig.messageSlideAction) {
             1 -> R.drawable.menu_saved_cg
             2 -> R.drawable.share_arrow
             else -> R.drawable.fast_reply
@@ -90,7 +90,7 @@ object CGFeatureHooks {
 
     @JvmStatic
     fun injectChatActivityMsgSlideAction(cf: ChatActivity, msg: MessageObject, isChannel: Boolean, classGuid: Int) {
-        when (CatogramConfig.messageSlideAction) {
+        when (SigmaGramConfig.messageSlideAction) {
             0 -> {
                 // Reply (default)
                 cf.showFieldPanelForReply(msg)

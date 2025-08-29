@@ -71,7 +71,7 @@ import org.telegram.ui.Components.RLottieImageView;
 
 import java.util.ArrayList;
 
-import ua.itaysonlab.catogram.EditTextAutoFill;
+import ua.itaysonlab.sigmagram.EditTextAutoFill;
 
 public class TwoStepVerificationSetupActivity extends BaseFragment {
 

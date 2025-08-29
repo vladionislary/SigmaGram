@@ -1,9 +1,9 @@
-package ua.itaysonlab.catogram.tabs
+package ua.itaysonlab.sigmagram.tabs
 
 import android.content.Context
 import org.telegram.messenger.ApplicationLoader
-import ua.itaysonlab.catogram.CatogramConfig
-import ua.itaysonlab.extras.CatogramExtras
+import ua.itaysonlab.sigmagram.SigmaGramConfig
+import ua.itaysonlab.extras.SigmaGramExtras
 import java.io.File
 import java.nio.charset.StandardCharsets
 
@@ -11,7 +11,7 @@ object TabIconManager {
     private const val SEPARATOR = "::"
 
     private val mappedEmojis = hashMapOf<Int, String>()
-    private val file = File(ApplicationLoader.applicationContext.getDir("cg_goodies", Context.MODE_PRIVATE), "CatogramFolderCache.cft")
+    private val file = File(ApplicationLoader.applicationContext.getDir("cg_goodies", Context.MODE_PRIVATE), "SigmaGramFolderCache.cft")
 
     init {
         load()
@@ -21,8 +21,8 @@ object TabIconManager {
     fun injectTabTitle(tab: FilterTabsView.Tab): String {
         val icon = getIconForTab(tab.id)
         return when {
-            CatogramConfig.newTabs_iconsV2_replace -> icon
-            CatogramConfig.newTabs_iconsV2_append -> "$icon ${tab.title}"
+            SigmaGramConfig.newTabs_iconsV2_replace -> icon
+            SigmaGramConfig.newTabs_iconsV2_append -> "$icon ${tab.title}"
             else -> tab.title
         }
     }*/
@@ -32,7 +32,7 @@ object TabIconManager {
         //Log.d("TabIconManager", "Requesting tab icon for $id [fb: $fallback]")
         if (id == Integer.MAX_VALUE) return fallback // All chats
         val icon = getIconForTab(id)
-        return when (CatogramConfig.newTabs_iconsV2_mode) {
+        return when (SigmaGramConfig.newTabs_iconsV2_mode) {
             1 -> "$icon $fallback"
             2 -> icon
             else -> fallback
@@ -53,7 +53,7 @@ object TabIconManager {
     }
 
     fun getIconForTab(id: Int): String {
-        return if (mappedEmojis.containsKey(id) && mappedEmojis[id] != null) mappedEmojis[id]!! else CatogramExtras.wrapEmoticon(null)
+        return if (mappedEmojis.containsKey(id) && mappedEmojis[id] != null) mappedEmojis[id]!! else SigmaGramExtras.wrapEmoticon(null)
     }
 
     private fun clear() {

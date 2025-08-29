@@ -29,8 +29,8 @@ import org.telegram.ui.Components.RecyclerListView;
 
 import java.util.ArrayList;
 
-import ua.itaysonlab.catogram.preferences.BasePreferencesEntry;
-import ua.itaysonlab.catogram.prefviews.StickerSliderCell;
+import ua.itaysonlab.sigmagram.preferences.BasePreferencesEntry;
+import ua.itaysonlab.sigmagram.prefviews.StickerSliderCell;
 import ua.itaysonlab.tgkit.preference.TGKitCategory;
 import ua.itaysonlab.tgkit.preference.TGKitPreference;
 import ua.itaysonlab.tgkit.preference.TGKitSettings;

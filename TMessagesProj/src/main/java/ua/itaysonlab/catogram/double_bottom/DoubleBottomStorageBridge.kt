@@ -1,13 +1,13 @@
-package ua.itaysonlab.catogram.double_bottom
+package ua.itaysonlab.sigmagram.double_bottom
 
 import android.app.Activity
 import android.content.SharedPreferences
 import org.json.JSONArray
 import org.json.JSONObject
 import org.telegram.messenger.ApplicationLoader
-import ua.itaysonlab.catogram.preferences.ktx.boolean
-import ua.itaysonlab.catogram.preferences.ktx.int
-import ua.itaysonlab.catogram.preferences.ktx.long
+import ua.itaysonlab.sigmagram.preferences.ktx.boolean
+import ua.itaysonlab.sigmagram.preferences.ktx.int
+import ua.itaysonlab.sigmagram.preferences.ktx.long
 
 // Used for storing data
 object DoubleBottomStorageBridge {

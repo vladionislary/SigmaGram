@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by iTaysonLab -->
-    <string name="AdvancedSettings">Catogram Preferences</string>
+    <string name="AdvancedSettings">SigmaGram Preferences</string>
     <string name="AS_Header_Appearance">Appearance</string>
     <string name="AS_HideUserPhone">Hide phone number</string>
     <string name="AS_HideUserPhoneSummary">in drawer and settings</string>
@@ -20,10 +20,10 @@
     <string name="AS_Hidden">Hidden</string>
     <string name="AS_UserID">Uživatelské ID</string>
     <string name="AS_GroupID">ID Skupiny</string>
-    <string name="CatogramVersion">Catogram %1$s</string>
+    <string name="SigmaGramVersion">SigmaGram %1$s</string>
     <string name="AV_ThemeBased">Dynamic</string>
     <string name="AS_Header_Categories">Kategorie</string>
-    <string name="AS_Header_About">O Catogramu</string>
+    <string name="AS_Header_About">O SigmaGramu</string>
     <string name="CG_AboutDesc">An experimental Telegram app modification.</string>
     <string name="CG_Donate">Přispět</string>
     <string name="CG_DonatDesc">Pomoct s pořízením PS5</string>

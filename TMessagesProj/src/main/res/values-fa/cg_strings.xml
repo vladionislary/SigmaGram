@@ -20,7 +20,7 @@
     <string name="AS_Hidden">پنهان</string>
     <string name="AS_UserID">شناسه کاربری</string>
     <string name="AS_GroupID">شناسه گروه</string>
-    <string name="CatogramVersion">کتوگرام %1$s</string>
+    <string name="SigmaGramVersion">کتوگرام %1$s</string>
     <string name="AV_ThemeBased">پویا</string>
     <string name="AS_Header_Categories">دسته بندی ها</string>
     <string name="AS_Header_About">درباره کتوگرام</string>

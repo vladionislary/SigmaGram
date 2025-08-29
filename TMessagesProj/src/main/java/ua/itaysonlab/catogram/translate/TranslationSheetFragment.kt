@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.translate
+package ua.itaysonlab.sigmagram.translate
 
 import android.annotation.SuppressLint
 import android.content.res.ColorStateList
@@ -12,7 +12,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import org.telegram.messenger.*
 import org.telegram.messenger.databinding.V5TranslationMarkupBinding
 import org.telegram.ui.ActionBar.Theme
-import ua.itaysonlab.catogram.translate.impl.GoogleTranslateImpl
+import ua.itaysonlab.sigmagram.translate.impl.GoogleTranslateImpl
 
 class TranslationSheetFragment(val txt: String) : BottomSheetDialogFragment() {
     private lateinit var vview: V5TranslationMarkupBinding

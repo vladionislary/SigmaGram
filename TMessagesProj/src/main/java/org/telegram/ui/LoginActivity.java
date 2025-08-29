@@ -124,8 +124,8 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import ua.itaysonlab.catogram.EditTextAutoFill;
-import ua.itaysonlab.catogram.double_bottom.DoubleBottomBridge;
+import ua.itaysonlab.sigmagram.EditTextAutoFill;
+import ua.itaysonlab.sigmagram.double_bottom.DoubleBottomBridge;
 
 @SuppressLint("HardwareIds")
 public class LoginActivity extends BaseFragment {
@@ -638,7 +638,7 @@ public class LoginActivity extends BaseFragment {
         try {
             Vibrator v = (Vibrator) getParentActivity().getSystemService(Context.VIBRATOR_SERVICE);
             if (v != null) {
-                ua.itaysonlab.extras.CatogramExtras.vibrate(v, 200);
+                ua.itaysonlab.extras.SigmaGramExtras.vibrate(v, 200);
             }
         } catch (Throwable ignore) {
 
@@ -3394,7 +3394,7 @@ public class LoginActivity extends BaseFragment {
             }
             Vibrator v = (Vibrator) getParentActivity().getSystemService(Context.VIBRATOR_SERVICE);
             if (v != null) {
-                ua.itaysonlab.extras.CatogramExtras.vibrate(v, 200);
+                ua.itaysonlab.extras.SigmaGramExtras.vibrate(v, 200);
             }
             if (clear) {
                 codeField.setText("");

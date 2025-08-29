@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.prefviews;
+package ua.itaysonlab.sigmagram.prefviews;
 
 import android.content.Context;
 import android.graphics.Canvas;

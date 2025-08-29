@@ -100,8 +100,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Locale;
 
-import ua.itaysonlab.catogram.CGFeatureHooks;
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.CGFeatureHooks;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class ShareAlert extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
 
@@ -1295,10 +1295,10 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     if (frameLayout2.getTag() != null && commentTextView.length() > 0) {
                         SendMessagesHelper.getInstance(currentAccount).sendMessage(commentTextView.getText().toString(), key, null, null, null, true, null, null, null, true, 0, null);
                     }
-                    if (CatogramConfig.INSTANCE.getForwardNoAuthorship() || CatogramConfig.INSTANCE.getForwardWithoutCaptions()) {
-                        SendMessagesHelper.getInstance(currentAccount).sendMessage(sendingMessageObjects, key, true,CatogramConfig.INSTANCE.getForwardWithoutCaptions(), CatogramConfig.INSTANCE.getForwardNotify(), 0);
+                    if (SigmaGramConfig.INSTANCE.getForwardNoAuthorship() || SigmaGramConfig.INSTANCE.getForwardWithoutCaptions()) {
+                        SendMessagesHelper.getInstance(currentAccount).sendMessage(sendingMessageObjects, key, true,SigmaGramConfig.INSTANCE.getForwardWithoutCaptions(), SigmaGramConfig.INSTANCE.getForwardNotify(), 0);
                     } else {
-                        SendMessagesHelper.getInstance(currentAccount).sendMessage(sendingMessageObjects, key, false,false, CatogramConfig.INSTANCE.getForwardNotify(), 0);
+                        SendMessagesHelper.getInstance(currentAccount).sendMessage(sendingMessageObjects, key, false,false, SigmaGramConfig.INSTANCE.getForwardNotify(), 0);
                     }
                 }
                 onSend(selectedDialogs, sendingMessageObjects.size());

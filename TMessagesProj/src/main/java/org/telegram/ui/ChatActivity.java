@@ -257,11 +257,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import kotlin.Pair;
-import ua.itaysonlab.catogram.CGFeatureHooks;
-import ua.itaysonlab.catogram.CatogramConfig;
-import ua.itaysonlab.catogram.stickers.StickerDownloader;
-import ua.itaysonlab.catogram.translate.TranslateAPI;
-import ua.itaysonlab.catogram.ui.CatogramToasts;
+import ua.itaysonlab.sigmagram.CGFeatureHooks;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
+import ua.itaysonlab.sigmagram.stickers.StickerDownloader;
+import ua.itaysonlab.sigmagram.translate.TranslateAPI;
+import ua.itaysonlab.sigmagram.ui.SigmaGramToasts;
 
 @SuppressWarnings("unchecked")
 public class ChatActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate, LocationActivity.LocationActivityDelegate, ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate {
@@ -3956,7 +3956,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         if (Math.abs(dx) >= AndroidUtilities.dp(50)) {
                             if (!wasTrackingVibrate) {
                                 try {
-                                    ua.itaysonlab.extras.CatogramExtras.performHapticFeedback(this, HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
+                                    ua.itaysonlab.extras.SigmaGramExtras.performHapticFeedback(this, HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                                 } catch (Exception ignore) {
 
                                 }
@@ -5269,7 +5269,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         checkTextureViewPosition = true;
                         scrollingChatListView = true;
 
-                        if (CatogramConfig.INSTANCE.getHideKeyboardOnScroll()) {
+                        if (SigmaGramConfig.INSTANCE.getHideKeyboardOnScroll()) {
                             InputMethodManager imm = (InputMethodManager) getParentActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                             imm.hideSoftInputFromWindow(recyclerView.getWindowToken(), 0);
                         }
@@ -5630,7 +5630,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 SharedPreferences preferences = MessagesController.getNotificationsSettings(currentAccount);
                 preferences.edit().putInt("pin_" + dialog_id, pinnedMessageIds.get(0)).commit();
                 updatePinnedMessageView(true);
-                CatogramToasts.notifyAboutUnpin();
+                SigmaGramToasts.notifyAboutUnpin();
                 return true;
             });
 
@@ -5687,7 +5687,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     SharedPreferences preferences = MessagesController.getNotificationsSettings(currentAccount);
                     preferences.edit().putInt("pin_" + dialog_id, pinnedMessageIds.get(0)).commit();
                     updatePinnedMessageView(true);
-                    CatogramToasts.notifyAboutUnpin();
+                    SigmaGramToasts.notifyAboutUnpin();
                 }
             });
         }
@@ -6423,7 +6423,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 if (searchingForUser && searchContainer.getVisibility() == View.VISIBLE) {
                     searchUserMessages(user, null);
                 } else {
-                    if (user.bot || (user.username != null && !CatogramConfig.INSTANCE.getMentionByName())) {
+                    if (user.bot || (user.username != null && !SigmaGramConfig.INSTANCE.getMentionByName())) {
                         chatActivityEnterView.replaceWithText(start, len, "@" + user.username + " ", false);
                     } else {
                         String name = UserObject.getFirstName(user, false);
@@ -6525,7 +6525,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             } else if (object instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) object;
                 if (!(searchingForUser && searchContainer.getVisibility() == View.VISIBLE) && user != null) {
-                    if (!CatogramConfig.INSTANCE.getMentionByName() && !user.bot) {
+                    if (!SigmaGramConfig.INSTANCE.getMentionByName() && !user.bot) {
                         String name = UserObject.getFirstName(user, false);
                         Spannable spannable = new SpannableString(name + " ");
                         spannable.setSpan(new URLSpanUserMention("" + user.id, 3), 0, spannable.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -10783,7 +10783,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 if (forwardingMessages.hideCaption) {
                     CGFeatureHooks.switchNoAuthor(true);
                 }
-                forwardingMessages.hideForwardSendersName = CatogramConfig.INSTANCE.getNoAuthorship();
+                forwardingMessages.hideForwardSendersName = SigmaGramConfig.INSTANCE.getNoAuthorship();
                 if (foundWebPage != null) {
                     return;
                 }
@@ -11034,7 +11034,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             if (forwardingMessages != null) {
                 ArrayList<MessageObject> messagesToForward = new ArrayList<>();
                 forwardingMessages.getSelectedMessages(messagesToForward);
-                forwardMessages(messagesToForward, CatogramConfig.INSTANCE.getNoAuthorship(), forwardingMessages.hideCaption, notify, scheduleDate != 0 && scheduleDate != 0x7ffffffe ? scheduleDate + 1 : scheduleDate);
+                forwardMessages(messagesToForward, SigmaGramConfig.INSTANCE.getNoAuthorship(), forwardingMessages.hideCaption, notify, scheduleDate != 0 && scheduleDate != 0x7ffffffe ? scheduleDate + 1 : scheduleDate);
                 forwardingMessages = null;
             }
             chatActivityEnterView.setForceShowSendButton(false, animated);
@@ -21456,7 +21456,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 if (message != null) {
                     getSendMessagesHelper().sendMessage(message.toString(), did, null, null, null, true, null, null, null, true, 0, null);
                 }
-                getSendMessagesHelper().sendMessage(fmessages, did, CatogramConfig.INSTANCE.getNoAuthorship(), false,true, 0);
+                getSendMessagesHelper().sendMessage(fmessages, did, SigmaGramConfig.INSTANCE.getNoAuthorship(), false,true, 0);
             }
             fragment.finishFragment();
             if (dids.size() == 1) {
@@ -23460,7 +23460,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             return;
                         }
                         fireworksOverlay.start();
-                        ua.itaysonlab.extras.CatogramExtras.performHapticFeedback(fireworksOverlay, HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
+                        ua.itaysonlab.extras.SigmaGramExtras.performHapticFeedback(fireworksOverlay, HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                     }
 
                     @Override

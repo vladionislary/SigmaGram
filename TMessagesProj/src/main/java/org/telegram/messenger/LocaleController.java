@@ -39,7 +39,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class LocaleController {
 
@@ -1800,7 +1800,7 @@ public class LocaleController {
     }
 
     public static String formatShortNumber(int number, int[] rounded) {
-        if (CatogramConfig.INSTANCE.getNoRounding()) return String.valueOf(number);
+        if (SigmaGramConfig.INSTANCE.getNoRounding()) return String.valueOf(number);
         StringBuilder K = new StringBuilder();
         int lastDec = 0;
         int KCount = 0;
@@ -1831,7 +1831,7 @@ public class LocaleController {
     }
 
     public static String formatShortNumber(long number, int[] rounded) {
-        if (CatogramConfig.INSTANCE.getNoRounding()) return String.valueOf(number);
+        if (SigmaGramConfig.INSTANCE.getNoRounding()) return String.valueOf(number);
         StringBuilder K = new StringBuilder();
         long lastDec = 0;
         while (number / 1000 > 0) {

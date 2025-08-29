@@ -55,8 +55,8 @@ import org.telegram.ui.ActionBar.Theme;
 
 import java.util.ArrayList;
 
-import ua.itaysonlab.catogram.CatogramConfig;
-import ua.itaysonlab.catogram.tabs.TabIconManager;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
+import ua.itaysonlab.sigmagram.tabs.TabIconManager;
 
 public class FilterTabsView extends FrameLayout {
 
@@ -1205,7 +1205,7 @@ public class FilterTabsView extends FrameLayout {
             Tab firstTab = tabs.get(0);
             int tabWith = firstTab.getWidth(false);
 
-            if (!CatogramConfig.INSTANCE.getNewTabs_hideAllChats()) {
+            if (!SigmaGramConfig.INSTANCE.getNewTabs_hideAllChats()) {
                 firstTab.setTitle(LocaleController.getString("FilterAllChats", R.string.FilterAllChats));
                 firstTab.setTitle(allTabsWidth > width ? LocaleController.getString("FilterAllChatsShort", R.string.FilterAllChatsShort) : LocaleController.getString("FilterAllChats", R.string.FilterAllChats));
             }
@@ -1361,7 +1361,7 @@ public class FilterTabsView extends FrameLayout {
                 requestLayout();
                 allTabsWidth = 0;
 
-                if (!CatogramConfig.INSTANCE.getNewTabs_hideAllChats()) tabs.get(0).setTitle(LocaleController.getString("FilterAllChats", R.string.FilterAllChats));
+                if (!SigmaGramConfig.INSTANCE.getNewTabs_hideAllChats()) tabs.get(0).setTitle(LocaleController.getString("FilterAllChats", R.string.FilterAllChats));
 
                 for (int b = 0; b < N; b++) {
                     allTabsWidth += tabs.get(b).getWidth(true) + AndroidUtilities.dp(32);
@@ -1394,7 +1394,7 @@ public class FilterTabsView extends FrameLayout {
             adapter.notifyDataSetChanged();
             allTabsWidth = 0;
 
-            if (!CatogramConfig.INSTANCE.getNewTabs_hideAllChats()) tabs.get(0).setTitle(LocaleController.getString("FilterAllChats", R.string.FilterAllChats));
+            if (!SigmaGramConfig.INSTANCE.getNewTabs_hideAllChats()) tabs.get(0).setTitle(LocaleController.getString("FilterAllChats", R.string.FilterAllChats));
 
             for (int b = 0, N = tabs.size(); b < N; b++) {
                 allTabsWidth += tabs.get(b).getWidth(true) + AndroidUtilities.dp(32);
@@ -1445,7 +1445,7 @@ public class FilterTabsView extends FrameLayout {
             int idx1 = fromIndex - 1;
             int idx2 = toIndex - 1;
             int count = tabs.size() - 1;
-            if (CatogramConfig.INSTANCE.getNewTabs_hideAllChats()) {
+            if (SigmaGramConfig.INSTANCE.getNewTabs_hideAllChats()) {
                 idx1++;
                 idx2++;
                 count++;
@@ -1512,7 +1512,7 @@ public class FilterTabsView extends FrameLayout {
 
         @Override
         public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-            if (!isEditing || (!CatogramConfig.INSTANCE.getNewTabs_hideAllChats() && viewHolder.getAdapterPosition() == 0)) {
+            if (!isEditing || (!SigmaGramConfig.INSTANCE.getNewTabs_hideAllChats() && viewHolder.getAdapterPosition() == 0)) {
                 return makeMovementFlags(0, 0);
             }
             return makeMovementFlags(ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT, 0);
@@ -1520,7 +1520,7 @@ public class FilterTabsView extends FrameLayout {
 
         @Override
         public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder source, RecyclerView.ViewHolder target) {
-            if (!CatogramConfig.INSTANCE.getNewTabs_hideAllChats() && (source.getAdapterPosition() == 0 || target.getAdapterPosition() == 0)) {
+            if (!SigmaGramConfig.INSTANCE.getNewTabs_hideAllChats() && (source.getAdapterPosition() == 0 || target.getAdapterPosition() == 0)) {
                 return false;
             }
             adapter.swapElements(source.getAdapterPosition(), target.getAdapterPosition());

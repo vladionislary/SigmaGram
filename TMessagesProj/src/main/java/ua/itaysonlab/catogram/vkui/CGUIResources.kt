@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.vkui
+package ua.itaysonlab.sigmagram.vkui
 
 import android.annotation.SuppressLint
 import android.content.res.*
@@ -13,16 +13,16 @@ import android.util.TypedValue
 import androidx.annotation.RequiresApi
 import com.google.android.exoplayer2.util.Log
 import org.xmlpull.v1.XmlPullParserException
-import ua.itaysonlab.catogram.CatogramConfig
-import ua.itaysonlab.catogram.vkui.icon_replaces.BaseIconReplace
+import ua.itaysonlab.sigmagram.SigmaGramConfig
+import ua.itaysonlab.sigmagram.vkui.icon_replaces.BaseIconReplace
 import java.io.IOException
 import java.io.InputStream
 
 @Suppress("DEPRECATION")
 class CGUIResources(private val wrapped: Resources) : Resources(wrapped.assets, wrapped.displayMetrics, wrapped.configuration) {
-    var activeReplacement: BaseIconReplace = CatogramConfig.getIconReplacement()
+    var activeReplacement: BaseIconReplace = SigmaGramConfig.getIconReplacement()
     fun reloadReplacements() {
-        activeReplacement = CatogramConfig.getIconReplacement()
+        activeReplacement = SigmaGramConfig.getIconReplacement()
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")

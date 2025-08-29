@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.ui;
+package ua.itaysonlab.sigmagram.ui;
 
 import android.content.SharedPreferences;
 import android.widget.Toast;
@@ -6,7 +6,7 @@ import android.widget.Toast;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.MessagesController;
 
-public class CatogramToasts {
+public class SigmaGramToasts {
     private static boolean shownUnpinHint = false;
 
     static void shownUnpinHint() {

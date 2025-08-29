@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.vkui.icon_replaces
+package ua.itaysonlab.sigmagram.vkui.icon_replaces
 
 import android.util.SparseIntArray
 import androidx.core.util.containsKey

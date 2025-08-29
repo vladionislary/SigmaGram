@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.vkui
+package ua.itaysonlab.sigmagram.vkui
 
 import android.util.SparseIntArray
 

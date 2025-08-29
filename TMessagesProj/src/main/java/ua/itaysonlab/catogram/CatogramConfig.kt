@@ -1,20 +1,20 @@
-package ua.itaysonlab.catogram
+package ua.itaysonlab.sigmagram
 
 import android.app.Activity
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import org.telegram.messenger.ApplicationLoader
 import org.telegram.messenger.MessagesController
-import ua.itaysonlab.catogram.preferences.ktx.boolean
-import ua.itaysonlab.catogram.preferences.ktx.int
-import ua.itaysonlab.catogram.preferences.ktx.string
-import ua.itaysonlab.catogram.ui.CatogramToasts
-import ua.itaysonlab.catogram.vkui.icon_replaces.BaseIconReplace
-import ua.itaysonlab.catogram.vkui.icon_replaces.NoIconReplace
-import ua.itaysonlab.catogram.vkui.icon_replaces.VkIconReplace
+import ua.itaysonlab.sigmagram.preferences.ktx.boolean
+import ua.itaysonlab.sigmagram.preferences.ktx.int
+import ua.itaysonlab.sigmagram.preferences.ktx.string
+import ua.itaysonlab.sigmagram.ui.SigmaGramToasts
+import ua.itaysonlab.sigmagram.vkui.icon_replaces.BaseIconReplace
+import ua.itaysonlab.sigmagram.vkui.icon_replaces.NoIconReplace
+import ua.itaysonlab.sigmagram.vkui.icon_replaces.VkIconReplace
 import kotlin.system.exitProcess
 
-object CatogramConfig {
+object SigmaGramConfig {
 
     private val sharedPreferences: SharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE)
     var trLang by sharedPreferences.string("cg_tr_lang", "en")
@@ -107,7 +107,7 @@ object CatogramConfig {
     var flatChannelStyle = true
 
     init {
-        CatogramToasts.init(sharedPreferences)
+        SigmaGramToasts.init(sharedPreferences)
         fuckOff()
     }
 

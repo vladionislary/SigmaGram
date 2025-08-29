@@ -2229,7 +2229,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 if (value == null) {
                     Vibrator v = (Vibrator) getParentActivity().getSystemService(Context.VIBRATOR_SERVICE);
                     if (v != null) {
-                        ua.itaysonlab.extras.CatogramExtras.vibrate(v, 200);
+                        ua.itaysonlab.extras.SigmaGramExtras.vibrate(v, 200);
                     }
                     AndroidUtilities.shakeView(getViewByType(requiredType), 2, 0);
                     return;
@@ -2239,7 +2239,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 if (errors != null && !errors.isEmpty()) {
                     Vibrator v = (Vibrator) getParentActivity().getSystemService(Context.VIBRATOR_SERVICE);
                     if (v != null) {
-                        ua.itaysonlab.extras.CatogramExtras.vibrate(v, 200);
+                        ua.itaysonlab.extras.SigmaGramExtras.vibrate(v, 200);
                     }
                     AndroidUtilities.shakeView(getViewByType(requiredType), 2, 0);
                     return;
@@ -3575,7 +3575,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         }
         Vibrator v = (Vibrator) getParentActivity().getSystemService(Context.VIBRATOR_SERVICE);
         if (v != null) {
-            ua.itaysonlab.extras.CatogramExtras.vibrate(v, 200);
+            ua.itaysonlab.extras.SigmaGramExtras.vibrate(v, 200);
         }
         AndroidUtilities.shakeView(field, 2, 0);
         scrollToField(field);
@@ -6250,7 +6250,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         }
         Vibrator v = (Vibrator) getParentActivity().getSystemService(Context.VIBRATOR_SERVICE);
         if (v != null) {
-            ua.itaysonlab.extras.CatogramExtras.vibrate(v, 200);
+            ua.itaysonlab.extras.SigmaGramExtras.vibrate(v, 200);
         }
         if (clear) {
             inputFields[FIELD_PASSWORD].setText("");

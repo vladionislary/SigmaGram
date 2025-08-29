@@ -1,9 +1,9 @@
 {
   "project_info": {
     "project_number": "657355553368",
-    "firebase_url": "https://catogram-c1069.firebaseio.com",
-    "project_id": "catogram-c1069",
-    "storage_bucket": "catogram-c1069.appspot.com"
+    "firebase_url": "https://sigmagram-project.firebaseio.com",
+    "project_id": "sigmagram-project",
+    "storage_bucket": "sigmagram-project.appspot.com"
   },
   "client": [
     {

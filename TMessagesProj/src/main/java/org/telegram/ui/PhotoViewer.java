@@ -274,7 +274,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 @SuppressWarnings("unchecked")
 public class PhotoViewer implements NotificationCenter.NotificationCenterDelegate, GestureDetector2.OnGestureListener, GestureDetector2.OnDoubleTapListener {
@@ -5973,7 +5973,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             int len = mentionsAdapter.getResultLength();
             if (object instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) object;
-                if (user.bot || (user.username != null && !CatogramConfig.INSTANCE.getMentionByName())) {
+                if (user.bot || (user.username != null && !SigmaGramConfig.INSTANCE.getMentionByName())) {
                     captionEditText.replaceWithText(start, len, "@" + user.username + " ", false);
                 } else {
                     String name = UserObject.getFirstName(user);
@@ -6005,7 +6005,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             } else if (object instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) object;
                 if (user != null) {
-                    if (!CatogramConfig.INSTANCE.getMentionByName() && !user.bot) {
+                    if (!SigmaGramConfig.INSTANCE.getMentionByName() && !user.bot) {
                         String name = UserObject.getFirstName(user, false);
                         Spannable spannable = new SpannableString(name + " ");
                         spannable.setSpan(new URLSpanUserMention("" + user.id, 3), 0, spannable.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -14434,7 +14434,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         }
         float x = e.getX();
         float y = e.getY();
-        if (!ua.itaysonlab.catogram.CatogramConfig.INSTANCE.getProfiles_noEdgeTapping() && checkImageView.getVisibility() != View.VISIBLE) {
+        if (!ua.itaysonlab.sigmagram.SigmaGramConfig.INSTANCE.getProfiles_noEdgeTapping() && checkImageView.getVisibility() != View.VISIBLE) {
             if (checkImageView.getVisibility() != View.VISIBLE) {
                 if (y > ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.dp(40)) {
                     int side = Math.min(135, containerView.getMeasuredWidth() / 8);
@@ -14598,7 +14598,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     private boolean enableSwipeToPiP() {
-        if (!CatogramConfig.INSTANCE.getEnableSwipeToPIP()) {
+        if (!SigmaGramConfig.INSTANCE.getEnableSwipeToPIP()) {
             return false;
         }
         boolean permissionsEnabled = Build.VERSION.SDK_INT < 23 || Settings.canDrawOverlays(parentActivity);

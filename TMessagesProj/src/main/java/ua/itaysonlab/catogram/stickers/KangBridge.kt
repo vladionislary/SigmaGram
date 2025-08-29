@@ -1,3 +1,3 @@
-package ua.itaysonlab.catogram.stickers
+package ua.itaysonlab.sigmagram.stickers
 
 class KangBridge

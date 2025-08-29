@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by iTaysonLab -->
-    <string name="AdvancedSettings">Catogram Sozlamalari</string>
+    <string name="AdvancedSettings">SigmaGram Sozlamalari</string>
     <string name="AS_Header_Appearance">Tashqi ko\'rinish</string>
     <string name="AS_HideUserPhone">Telefon raqamini yashirish</string>
     <string name="AS_HideUserPhoneSummary">yon menu va sozlamalarda</string>
@@ -20,10 +20,10 @@
     <string name="AS_Hidden">Yashirin</string>
     <string name="AS_UserID">Foydalanuvchi IDsi</string>
     <string name="AS_GroupID">Guruh IDsi</string>
-    <string name="CatogramVersion">Catogram %1$s</string>
+    <string name="SigmaGramVersion">SigmaGram %1$s</string>
     <string name="AV_ThemeBased">Dinamik</string>
     <string name="AS_Header_Categories">Toifalar</string>
-    <string name="AS_Header_About">Catogram haqida</string>
+    <string name="AS_Header_About">SigmaGram haqida</string>
     <string name="CG_AboutDesc">Eksperimental Telegram ilovasi modifikatsiyasi.</string>
     <string name="CG_Donate">Hadya etish</string>
     <string name="CG_DonatDesc">PS5 sotib olishga bizga yordam bering</string>

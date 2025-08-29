@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.translate.impl
+package ua.itaysonlab.sigmagram.translate.impl
 
 import kotlinx.coroutines.*
 import okhttp3.OkHttpClient
@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController
 import org.telegram.messenger.R
 import org.telegram.ui.Components.EditTextCaption
 import org.telegram.ui.Components.EditTextEmoji
-import ua.itaysonlab.catogram.CatogramConfig
+import ua.itaysonlab.sigmagram.SigmaGramConfig
 import java.net.URLEncoder
 
 object GoogleTranslateImpl : CoroutineScope by MainScope() {
@@ -20,7 +20,7 @@ object GoogleTranslateImpl : CoroutineScope by MainScope() {
         launch {
             try {
                 val tl = when {
-                    e -> CatogramConfig.trLang
+                    e -> SigmaGramConfig.trLang
                     else -> when (LocaleController.getString(
                         "LanguageCode",
                         R.string.LanguageCode

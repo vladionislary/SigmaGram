@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by iTaysonLab -->
-    <string name="AdvancedSettings">Catogram Einstellungen</string>
+    <string name="AdvancedSettings">SigmaGram Einstellungen</string>
     <string name="AS_Header_Appearance">Gestaltung</string>
     <string name="AS_HideUserPhone">Telefonnummer unkenntlich machen</string>
     <string name="AS_HideUserPhoneSummary">im Hamburger-Menü und den Einstellungen</string>
@@ -20,10 +20,10 @@
     <string name="AS_Hidden">Versteckt</string>
     <string name="AS_UserID">Nutzer ID</string>
     <string name="AS_GroupID">Gruppen ID</string>
-    <string name="CatogramVersion">Catogram %1$s</string>
+    <string name="SigmaGramVersion">SigmaGram %1$s</string>
     <string name="AV_ThemeBased">Dynamisch</string>
     <string name="AS_Header_Categories">Kategorien</string>
-    <string name="AS_Header_About">Über Catogram</string>
+    <string name="AS_Header_About">Über SigmaGram</string>
     <string name="CG_AboutDesc">Eine experimentelle Telegram Modifikation.</string>
     <string name="CG_Donate">Spenden</string>
     <string name="CG_DonatDesc">Helft uns eine PS5 zu kaufen ;)</string>

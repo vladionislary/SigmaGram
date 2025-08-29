@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.translate
+package ua.itaysonlab.sigmagram.translate
 
 import android.widget.LinearLayout
 import org.telegram.ui.ActionBar.BaseFragment

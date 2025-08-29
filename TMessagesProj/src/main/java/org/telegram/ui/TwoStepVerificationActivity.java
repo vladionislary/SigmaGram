@@ -63,7 +63,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import ua.itaysonlab.catogram.EditTextAutoFill;
+import ua.itaysonlab.sigmagram.EditTextAutoFill;
 
 public class TwoStepVerificationActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
 
@@ -978,7 +978,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
         }
         Vibrator v = (Vibrator) getParentActivity().getSystemService(Context.VIBRATOR_SERVICE);
         if (v != null) {
-            ua.itaysonlab.extras.CatogramExtras.vibrate(v, 200);
+            ua.itaysonlab.extras.SigmaGramExtras.vibrate(v, 200);
         }
         if (clear) {
             field.setText("");

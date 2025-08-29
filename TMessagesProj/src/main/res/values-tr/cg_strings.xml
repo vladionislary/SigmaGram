@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by iTaysonLab -->
-    <string name="AdvancedSettings">Catogram ayarları</string>
+    <string name="AdvancedSettings">SigmaGram ayarları</string>
     <string name="AS_Header_Appearance">Görünüm</string>
     <string name="AS_HideUserPhone">Telefon numarasını gizle</string>
     <string name="AS_HideUserPhoneSummary">menü ve ayarlarda</string>
@@ -20,10 +20,10 @@
     <string name="AS_Hidden">Gizli</string>
     <string name="AS_UserID">Kullanıcı Kimliği</string>
     <string name="AS_GroupID">Grup Kimliği</string>
-    <string name="CatogramVersion">Catogram %1$s</string>
+    <string name="SigmaGramVersion">SigmaGram %1$s</string>
     <string name="AV_ThemeBased">Dinamik</string>
     <string name="AS_Header_Categories">Kategoriler</string>
-    <string name="AS_Header_About">Catogram hakkında</string>
+    <string name="AS_Header_About">SigmaGram hakkında</string>
     <string name="CG_AboutDesc">Deneysel bir Telegram uygulaması modifikasyonu.</string>
     <string name="CG_Donate">Bağış Yap</string>
     <string name="CG_DonatDesc">PS5 almamız için yardım et</string>

@@ -1,0 +1,24 @@
+name: Android Build
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: "17"
+        distribution: "temurin"
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v2
+    - name: Build with Gradle
+      run: |
+        chmod +x gradlew
+        ./gradlew assembleDebug --no-daemon
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: SigmaGram-APK
+        path: TMessagesProj/build/outputs/apk/debug/*.apk

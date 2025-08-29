@@ -80,7 +80,7 @@ import org.telegram.ui.LocationActivity;
 
 import java.util.ArrayList;
 
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class FragmentContextView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener {
 
@@ -276,7 +276,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         selector = new View(context);
         frameLayout.addView(selector, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT));
 
-        if (!CatogramConfig.INSTANCE.getFlatActionbar()) {
+        if (!SigmaGramConfig.INSTANCE.getFlatActionbar()) {
             shadow = new View(context);
             shadow.setBackgroundResource(R.drawable.blockpanel_shadow);
             addView(shadow, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, 2, Gravity.LEFT | Gravity.TOP, 0, 36, 0, 0));
@@ -813,7 +813,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             avatars.setLayoutParams(LayoutHelper.createFrame(108, getStyleHeight(), Gravity.LEFT | Gravity.TOP));
         }
         frameLayout.setLayoutParams(LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, getStyleHeight(), Gravity.TOP | Gravity.LEFT, 0, 0, 0, 0));
-        if (!CatogramConfig.INSTANCE.getFlatActionbar())
+        if (!SigmaGramConfig.INSTANCE.getFlatActionbar())
             shadow.setLayoutParams(LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, 2, Gravity.LEFT | Gravity.TOP, 0, getStyleHeight(), 0, 0));
 
         if (topPadding > 0 && topPadding != AndroidUtilities.dp2(getStyleHeight())) {

@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram
+package ua.itaysonlab.sigmagram
 
 import android.content.BroadcastReceiver
 import android.content.Context

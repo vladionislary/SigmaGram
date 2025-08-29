@@ -151,7 +151,7 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ua.itaysonlab.extras.CatogramExtras;
+import ua.itaysonlab.extras.SigmaGramExtras;
 
 public class AndroidUtilities {
 
@@ -3569,7 +3569,7 @@ public class AndroidUtilities {
                 if ((flags & View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR) == 0) {
                     flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
                     decorView.setSystemUiVisibility(flags);
-                    window.setStatusBarColor(CatogramExtras.getLightStatusbarColor());
+                    window.setStatusBarColor(SigmaGramExtras.getLightStatusbarColor());
                     if (!SharedConfig.noStatusBar) {
                         window.setStatusBarColor(0x0f000000);
                     }
@@ -3578,7 +3578,7 @@ public class AndroidUtilities {
                 if ((flags & View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR) != 0) {
                     flags &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
                     decorView.setSystemUiVisibility(flags);
-                    window.setStatusBarColor(CatogramExtras.getDarkStatusbarColor());
+                    window.setStatusBarColor(SigmaGramExtras.getDarkStatusbarColor());
                     if (!SharedConfig.noStatusBar) {
                         window.setStatusBarColor(0x33000000);
                     }

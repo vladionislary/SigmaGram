@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
-import ua.itaysonlab.catogram.CGFeatureHooks;
+import ua.itaysonlab.sigmagram.CGFeatureHooks;
 
 public class FeedWidgetService extends RemoteViewsService {
     @Override

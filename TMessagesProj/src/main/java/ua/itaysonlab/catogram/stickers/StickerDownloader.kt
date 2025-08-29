@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.stickers
+package ua.itaysonlab.sigmagram.stickers
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

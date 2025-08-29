@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.double_bottom
+package ua.itaysonlab.sigmagram.double_bottom
 
 import org.telegram.messenger.SharedConfig
 import org.telegram.messenger.UserConfig

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by iTaysonLab -->
-    <string name="AdvancedSettings">Impostazioni di Catogram</string>
+    <string name="AdvancedSettings">Impostazioni di SigmaGram</string>
     <string name="AS_Header_Appearance">Aspetto</string>
     <string name="AS_HideUserPhone">Nascondi il numero di telefono</string>
     <string name="AS_HideUserPhoneSummary">nel drawer e nelle impostazioni</string>
@@ -20,10 +20,10 @@
     <string name="AS_Hidden">Nascosto</string>
     <string name="AS_UserID">ID Utente</string>
     <string name="AS_GroupID">ID del gruppo</string>
-    <string name="CatogramVersion">Catogram %1$s</string>
+    <string name="SigmaGramVersion">SigmaGram %1$s</string>
     <string name="AV_ThemeBased">Dinamico</string>
     <string name="AS_Header_Categories">Categorie</string>
-    <string name="AS_Header_About">Informazioni su Catogram</string>
+    <string name="AS_Header_About">Informazioni su SigmaGram</string>
     <string name="CG_AboutDesc">Una variante sperimentale dell\'app di Telegram.</string>
     <string name="CG_Donate">Dona</string>
     <string name="CG_DonatDesc">Aiutaci a comprare una PS5</string>

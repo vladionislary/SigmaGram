@@ -133,8 +133,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import ua.itaysonlab.catogram.CGFeatureHooks;
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.CGFeatureHooks;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 @SuppressLint("NewApi")
 public class VoIPService extends Service implements SensorEventListener, AudioManager.OnAudioFocusChangeListener, VoIPController.ConnectionStateListener, NotificationCenter.NotificationCenterDelegate {
@@ -3434,7 +3434,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 	}
 
 	private void loadResources() {
-		if (chat != null && CatogramConfig.INSTANCE.getUseMediaStream()) {
+		if (chat != null && SigmaGramConfig.INSTANCE.getUseMediaStream()) {
 			currentStreamType = AudioManager.STREAM_MUSIC;
 			if (Build.VERSION.SDK_INT >= 21) {
 				WebRtcAudioTrack.setAudioTrackUsageAttribute(AudioAttributes.USAGE_MEDIA);

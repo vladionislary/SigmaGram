@@ -66,7 +66,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class MessagesController extends BaseController implements NotificationCenter.NotificationCenterDelegate {
 
@@ -5599,7 +5599,7 @@ public class MessagesController extends BaseController implements NotificationCe
             } else if (response instanceof TLRPC.TL_help_promoData) {
                 TLRPC.TL_help_promoData res = (TLRPC.TL_help_promoData) response;
 
-                if (CatogramConfig.INSTANCE.getHideProxySponsor()) {
+                if (SigmaGramConfig.INSTANCE.getHideProxySponsor()) {
                     noDialog = true;
                     return;
                 }
@@ -8639,7 +8639,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     private void completeReadTask(ReadTask task) {
-        if (CatogramConfig.INSTANCE.getGhostMode()) return;
+        if (SigmaGramConfig.INSTANCE.getGhostMode()) return;
 
         if (task.replyId != 0) {
             TLRPC.TL_messages_readDiscussion req = new TLRPC.TL_messages_readDiscussion();
@@ -8687,7 +8687,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     private void checkReadTasks() {
-        if (CatogramConfig.INSTANCE.getGhostMode()) return;
+        if (SigmaGramConfig.INSTANCE.getGhostMode()) return;
 
         long time = SystemClock.elapsedRealtime();
         for (int a = 0, size = readTasks.size(); a < size; a++) {
@@ -8716,7 +8716,7 @@ public class MessagesController extends BaseController implements NotificationCe
 
     public void markDialogAsReadNow(long dialogId, int replyId) {
 
-            if (CatogramConfig.INSTANCE.getGhostMode()) return;
+            if (SigmaGramConfig.INSTANCE.getGhostMode()) return;
         Utilities.stageQueue.postRunnable(() -> {
             if (replyId != 0) {
                 String key = dialogId + "_" + replyId;
@@ -8740,7 +8740,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public void markMentionsAsRead(long dialogId) {
-        if (CatogramConfig.INSTANCE.getGhostMode()) return;
+        if (SigmaGramConfig.INSTANCE.getGhostMode()) return;
         if (DialogObject.isEncryptedDialog(dialogId)) {
             return;
         }
@@ -8754,7 +8754,7 @@ public class MessagesController extends BaseController implements NotificationCe
 
 
     public void markDialogAsRead(long dialogId, int maxPositiveId, int maxNegativeId, int maxDate, boolean popup, int threadId, int countDiff, boolean readNow, int scheduledCount) {
-            if (CatogramConfig.INSTANCE.getGhostMode()) return;
+            if (SigmaGramConfig.INSTANCE.getGhostMode()) return;
         boolean createReadTask;
 
         if (threadId != 0) {
@@ -10621,7 +10621,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 } else {
                     newTaskId = taskId;
                 }
-                if (CatogramConfig.INSTANCE.getSyncPins()) {
+                if (SigmaGramConfig.INSTANCE.getSyncPins()) {
                     getConnectionsManager().sendRequest(req, (response, error) -> {
                         if (newTaskId != 0) {
                             getMessagesStorage().removePendingTask(newTaskId);
@@ -10635,7 +10635,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public void loadPinnedDialogs(final int folderId, long newDialogId, ArrayList<Long> order) {
-        if (!CatogramConfig.INSTANCE.getSyncPins()) {
+        if (!SigmaGramConfig.INSTANCE.getSyncPins()) {
             return;
         }
         if (loadingPinnedDialogs.indexOfKey(folderId) >= 0 || getUserConfig().isPinnedDialogsLoaded(folderId)) {
@@ -14341,7 +14341,7 @@ public class MessagesController extends BaseController implements NotificationCe
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(fragment.getParentActivity());
-        builder.setTitle("Catogram");
+        builder.setTitle("SigmaGram");
         builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), null);
         builder.setMessage(reason);
         fragment.showDialog(builder.create());

@@ -64,7 +64,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class ActionBarLayout extends FrameLayout {
 
@@ -337,7 +337,7 @@ public class ActionBarLayout extends FrameLayout {
 
         if (layerShadowDrawable == null) {
             layerShadowDrawable = getResources().getDrawable(R.drawable.layer_shadow);
-            headerShadowDrawable = CatogramConfig.INSTANCE.getFlatActionbar() ? null : getResources().getDrawable(R.drawable.header_shadow).mutate();
+            headerShadowDrawable = SigmaGramConfig.INSTANCE.getFlatActionbar() ? null : getResources().getDrawable(R.drawable.header_shadow).mutate();
             scrimPaint = new Paint();
         }
     }
@@ -380,7 +380,7 @@ public class ActionBarLayout extends FrameLayout {
     }
 
     public void drawHeaderShadow(Canvas canvas, int y) {
-        if (CatogramConfig.INSTANCE.getFlatActionbar()) return;
+        if (SigmaGramConfig.INSTANCE.getFlatActionbar()) return;
         drawHeaderShadow(canvas, 255, y);
     }
 
@@ -1337,7 +1337,7 @@ public class ActionBarLayout extends FrameLayout {
                 }
             });
             animatorSet.start();
-            ua.itaysonlab.extras.CatogramExtras.performHapticFeedback(this, HapticFeedbackConstants.KEYBOARD_TAP);
+            ua.itaysonlab.extras.SigmaGramExtras.performHapticFeedback(this, HapticFeedbackConstants.KEYBOARD_TAP);
 
             fragment.setInPreviewMode(false);
         }

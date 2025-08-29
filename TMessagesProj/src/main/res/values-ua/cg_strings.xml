@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by iTaysonLab -->
-    <string name="AdvancedSettings">Налаштування Catogram</string>
+    <string name="AdvancedSettings">Налаштування SigmaGram</string>
 
     <string name="AS_Header_Appearance">Зовнішній вигляд</string>
     <string name="AS_HideUserPhone">Приховати номер телефону</string>
@@ -27,12 +27,12 @@
     <string name="AS_Hidden">Приховано</string>
     <string name="AS_UserID">ID користувача</string>
     <string name="AS_GroupID">ID групи</string>
-    <string name="CatogramVersion">Catogram %1$s</string>
+    <string name="SigmaGramVersion">SigmaGram %1$s</string>
     <string name="AV_ThemeBased">Динамічна</string>
 
 
     <string name="AS_Header_Categories">Категорії</string>
-    <string name="AS_Header_About">Про Catogram</string>
+    <string name="AS_Header_About">Про SigmaGram</string>
 
     <string name="CG_AboutDesc">Експериментальна модифікація офіційного додатку Telegram.</string>
     <string name="CG_Donate">Підтримати розробку</string>

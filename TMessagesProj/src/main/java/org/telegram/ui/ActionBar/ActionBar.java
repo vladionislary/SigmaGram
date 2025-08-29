@@ -52,7 +52,7 @@ import org.telegram.ui.Components.SnowflakesEffect;
 
 import java.util.ArrayList;
 
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class ActionBar extends FrameLayout {
 
@@ -105,7 +105,7 @@ public class ActionBar extends FrameLayout {
     private Runnable lastRunnable;
     private boolean titleOverlayShown;
     private Runnable titleActionRunnable;
-    private boolean castShadows = !CatogramConfig.INSTANCE.getFlatActionbar();
+    private boolean castShadows = !SigmaGramConfig.INSTANCE.getFlatActionbar();
 
     protected boolean isSearchFieldVisible;
     protected int itemsBackgroundColor;
@@ -1315,12 +1315,12 @@ public class ActionBar extends FrameLayout {
     }
 
     public void setCastShadows(boolean value) {
-        if (CatogramConfig.INSTANCE.getFlatActionbar()) return;
+        if (SigmaGramConfig.INSTANCE.getFlatActionbar()) return;
         castShadows = value;
     }
 
     public boolean getCastShadows() {
-        return !CatogramConfig.INSTANCE.getFlatActionbar();
+        return !SigmaGramConfig.INSTANCE.getFlatActionbar();
     }
 
     @Override

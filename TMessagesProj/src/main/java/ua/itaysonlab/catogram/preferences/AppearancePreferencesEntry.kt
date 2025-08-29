@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.preferences
+package ua.itaysonlab.sigmagram.preferences
 
 import android.graphics.Color
 import org.telegram.messenger.LocaleController
@@ -7,9 +7,9 @@ import org.telegram.messenger.SharedConfig
 import org.telegram.ui.ActionBar.BaseFragment
 import org.telegram.ui.ActionBar.Theme
 import org.telegram.ui.LaunchActivity
-import ua.itaysonlab.catogram.CatogramConfig
-import ua.itaysonlab.catogram.preferences.ktx.*
-import ua.itaysonlab.extras.CatogramExtras
+import ua.itaysonlab.sigmagram.SigmaGramConfig
+import ua.itaysonlab.sigmagram.preferences.ktx.*
+import ua.itaysonlab.extras.SigmaGramExtras
 import ua.itaysonlab.extras.IconExtras
 
 class AppearancePreferencesEntry : BasePreferencesEntry {
@@ -20,9 +20,9 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("CG_TelegramThemes_Desc", R.string.CG_TelegramThemes_Desc)
 
                 contract({
-                    return@contract CatogramConfig.redesign_TelegramThemes
+                    return@contract SigmaGramConfig.redesign_TelegramThemes
                 }) {
-                    CatogramConfig.redesign_TelegramThemes = it
+                    SigmaGramConfig.redesign_TelegramThemes = it
                 }
             }
 
@@ -36,13 +36,13 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                             Triple(2, LocaleController.getString("AS_ChangeIcon_AltOrange", R.string.AS_ChangeIcon_AltOrange), R.mipmap.cg_launcher_alt_orange)
                     )
                 }, {
-                    return@contractIcons when (CatogramConfig.redesign_iconOption) {
+                    return@contractIcons when (SigmaGramConfig.redesign_iconOption) {
                         1 -> LocaleController.getString("AS_ChangeIcon_AltBlue", R.string.AS_ChangeIcon_AltBlue)
                         2 -> LocaleController.getString("AS_ChangeIcon_AltOrange", R.string.AS_ChangeIcon_AltOrange)
                         else -> LocaleController.getString("AS_ChangeIcon_Old", R.string.AS_ChangeIcon_Old)
                     }
                 }) {
-                    CatogramConfig.redesign_iconOption = it
+                    SigmaGramConfig.redesign_iconOption = it
                     IconExtras.setIcon(it)
                 }
             }
@@ -56,12 +56,12 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                             Triple(1, LocaleController.getString("CG_IconReplacement_Default", R.string.CG_IconReplacement_Default), R.drawable.menu_settings)
                     )
                 }, {
-                    return@contractIcons when (CatogramConfig.iconReplacement) {
+                    return@contractIcons when (SigmaGramConfig.iconReplacement) {
                         1 -> LocaleController.getString("CG_IconReplacement_Default", R.string.CG_IconReplacement_Default)
                         else -> LocaleController.getString("CG_IconReplacement_VKUI", R.string.CG_IconReplacement_VKUI)
                     }
                 }) {
-                    CatogramConfig.iconReplacement = it
+                    SigmaGramConfig.iconReplacement = it
                     (bf.parentActivity as? LaunchActivity)?.reloadResources()
                 }
             }
@@ -73,9 +73,9 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("AS_HideUserPhoneSummary", R.string.AS_HideUserPhoneSummary)
 
                 contract({
-                    return@contract CatogramConfig.hidePhoneNumber
+                    return@contract SigmaGramConfig.hidePhoneNumber
                 }) {
-                    CatogramConfig.hidePhoneNumber = it
+                    SigmaGramConfig.hidePhoneNumber = it
                 }
             }
 
@@ -84,9 +84,9 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                 summary = LocaleController.getString("AS_NoRoundingSummary", R.string.AS_NoRoundingSummary)
 
                 contract({
-                    return@contract CatogramConfig.noRounding
+                    return@contract SigmaGramConfig.noRounding
                 }) {
-                    CatogramConfig.noRounding = it
+                    SigmaGramConfig.noRounding = it
                 }
             }
 
@@ -94,9 +94,9 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                 title = LocaleController.getString("AS_Vibration", R.string.AS_Vibration)
 
                 contract({
-                    return@contract CatogramConfig.noVibration
+                    return@contract SigmaGramConfig.noVibration
                 }) {
-                    CatogramConfig.noVibration = it
+                    SigmaGramConfig.noVibration = it
                 }
             }
 
@@ -108,7 +108,7 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                     return@contract SharedConfig.noStatusBar
                 }) {
                     SharedConfig.toggleNoStatusBar()
-                    bf.parentActivity.window.statusBarColor = if (Theme.getColor(Theme.key_actionBarDefault, null, true) == Color.WHITE) CatogramExtras.lightStatusbarColor else CatogramExtras.darkStatusbarColor
+                    bf.parentActivity.window.statusBarColor = if (Theme.getColor(Theme.key_actionBarDefault, null, true) == Color.WHITE) SigmaGramExtras.lightStatusbarColor else SigmaGramExtras.darkStatusbarColor
                 }
             }
 
@@ -116,9 +116,9 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                 title = LocaleController.getString("AS_FlatAB", R.string.AS_FlatAB)
 
                 contract({
-                    return@contract CatogramConfig.flatActionbar
+                    return@contract SigmaGramConfig.flatActionbar
                 }) {
-                    CatogramConfig.flatActionbar = it
+                    SigmaGramConfig.flatActionbar = it
                 }
             }
 
@@ -126,9 +126,9 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                 title = LocaleController.getString("CG_ConfirmCalls", R.string.CG_ConfirmCalls)
 
                 contract({
-                    return@contract CatogramConfig.confirmCalls
+                    return@contract SigmaGramConfig.confirmCalls
                 }) {
-                    CatogramConfig.confirmCalls = it
+                    SigmaGramConfig.confirmCalls = it
                 }
             }
 
@@ -150,9 +150,9 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                 title = LocaleController.getString("CG_OldNotification", R.string.CG_OldNotification)
 
                 contract({
-                    return@contract CatogramConfig.oldNotificationIcon
+                    return@contract SigmaGramConfig.oldNotificationIcon
                 }) {
-                    CatogramConfig.oldNotificationIcon = it
+                    SigmaGramConfig.oldNotificationIcon = it
                 }
             }
         }
@@ -163,9 +163,9 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                 title = LocaleController.getString("AS_DrawerAvatar", R.string.AS_DrawerAvatar)
 
                 contract({
-                    return@contract CatogramConfig.drawerAvatar
+                    return@contract SigmaGramConfig.drawerAvatar
                 }) {
-                    CatogramConfig.drawerAvatar = it
+                    SigmaGramConfig.drawerAvatar = it
                 }
             }
 
@@ -173,9 +173,9 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                 title = LocaleController.getString("AS_DrawerBlur", R.string.AS_DrawerBlur)
 
                 contract({
-                    return@contract CatogramConfig.drawerBlur
+                    return@contract SigmaGramConfig.drawerBlur
                 }) {
-                    CatogramConfig.drawerBlur = it
+                    SigmaGramConfig.drawerBlur = it
                 }
             }
 
@@ -183,9 +183,9 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                 title = LocaleController.getString("AS_DrawerDarken", R.string.AS_DrawerDarken)
 
                 contract({
-                    return@contract CatogramConfig.drawerDarken
+                    return@contract SigmaGramConfig.drawerDarken
                 }) {
-                    CatogramConfig.drawerDarken = it
+                    SigmaGramConfig.drawerDarken = it
                 }
             }
         }

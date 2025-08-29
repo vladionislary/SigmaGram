@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram;
+package ua.itaysonlab.sigmagram;
 
 import android.annotation.TargetApi;
 import android.content.Context;

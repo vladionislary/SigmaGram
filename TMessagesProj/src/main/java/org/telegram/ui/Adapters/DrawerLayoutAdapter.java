@@ -34,8 +34,8 @@ import org.telegram.ui.Components.SideMenultItemAnimator;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import ua.itaysonlab.catogram.double_bottom.DoubleBottomBridge;
-import ua.itaysonlab.catogram.double_bottom.DoubleBottomStorageBridge;
+import ua.itaysonlab.sigmagram.double_bottom.DoubleBottomBridge;
+import ua.itaysonlab.sigmagram.double_bottom.DoubleBottomStorageBridge;
 
 public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
 

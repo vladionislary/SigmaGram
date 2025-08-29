@@ -26,7 +26,7 @@ public class BuildVars {
     public static boolean NO_SCOPED_STORAGE = true/* || Build.VERSION.SDK_INT <= 28*/;
     //
     public static String SMS_HASH = "w0lkcmTZkKh";
-    public static String PLAYSTORE_APP_URL = "https://t.me/catogram";
+    public static String PLAYSTORE_APP_URL = "https://t.me/sigmagram";
 
     static {
         if (ApplicationLoader.applicationContext != null) {

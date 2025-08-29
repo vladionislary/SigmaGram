@@ -1,4 +1,4 @@
-package ua.itaysonlab.catogram.preferences.ktx
+package ua.itaysonlab.sigmagram.preferences.ktx
 
 import androidx.core.util.Pair
 import ua.itaysonlab.tgkit.preference.TGKitCategory

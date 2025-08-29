@@ -61,7 +61,7 @@ import java.util.Collections;
 import java.util.Locale;
 import java.util.Set;
 
-import ua.itaysonlab.catogram.CatogramConfig;
+import ua.itaysonlab.sigmagram.SigmaGramConfig;
 
 public class VoIPHelper {
 
@@ -103,7 +103,7 @@ public class VoIPHelper {
 			return;
 		}
 
-		if (CatogramConfig.INSTANCE.getConfirmCalls() && !confirmed) {
+		if (SigmaGramConfig.INSTANCE.getConfirmCalls() && !confirmed) {
 			new AlertDialog.Builder(activity)
 					.setTitle(LocaleController.getString("CG_ConfirmCalling_Header", R.string.CG_ConfirmCalling_Header))
 					.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("CG_ConfirmCalling_Question", R.string.CG_ConfirmCalling_Question, ContactsController.formatName(user.first_name, user.last_name))))
