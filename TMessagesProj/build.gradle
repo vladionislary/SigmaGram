@@ -102,10 +102,11 @@ android {
         coreLibraryDesugaringEnabled true
     }
 
-    def propFile = new File('local.properties')
-
-    def Properties props = new Properties()
-    props.load(new FileInputStream(propFile))
+    def propFile = rootProject.file('local.properties')
+   def props = new Properties()
+   if (propFile.exists()) {
+       props.load(new FileInputStream(propFile))
+   }
 
     signingConfigs {
         debug {
