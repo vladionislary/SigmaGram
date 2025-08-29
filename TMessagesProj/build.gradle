@@ -359,8 +359,8 @@ android {
         targetSdkVersion 30
         versionName "8.2.1"
 
-        buildConfigField "int", "APP_ID", props['APP_ID']
-        buildConfigField "String", "API_HASH", props['API_HASH']
+        buildConfigField "int", "APP_ID", props.getProperty('APP_ID', '12345')
+buildConfigField "String", "API_HASH", '"' + props.getProperty('API_HASH', 'default_hash') + '"'
 
         vectorDrawables.generatedDensities = ['mdpi', 'hdpi', 'xhdpi', 'xxhdpi']
 
