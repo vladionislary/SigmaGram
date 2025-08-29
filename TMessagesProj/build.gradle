@@ -61,8 +61,11 @@ android {
     }
 
     buildFeatures {
-        viewBinding true
+    buildConfig = true    // ← ДОБАВЬ ЭТУ СТРОКУ
+    viewBinding true
     }
+
+
 
     compileSdkVersion 31
     buildToolsVersion '30.0.3'
