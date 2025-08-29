@@ -4,28 +4,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3        # ← Добавь отступ!
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3      # ← Добавь отступ!
-      with:
-        java-version: "17"             # ← Добавь отступ!
-        distribution: "temurin"        # ← Добавь отступ!
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: "17"
+          distribution: "temurin"
 
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v2  # ← Добавь @v2 и отступ!
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
 
-    - name: Make gradlew executable
-      run: chmod +x ./gradlew           # ← Добавь отступ!
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
 
-    - name: Build with Gradle
-      run: |                            # ← Добавь отступ!
-        chmod +x gradlew
-        ./gradlew assembleDebug --no-daemon  # ← Исправь на --no-daemon
+      - name: Update Gradle Wrapper
+        run: ./gradlew wrapper --gradle-version=8.10 --distribution-type=bin
 
-    - name: Upload APK
-      uses: actions/upload-artifact@v4.3.3  # ← Убери запятую!
-      with:
-        name: SigmaGram-APK
-        path: TMessagesProj/build/outputs/apk/debug/*.apk
+      - name: Build with Gradle
+        run: |
+          ./gradlew assembleDebug --no-daemon
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4.3.3
+        with:
+          name: SigmaGram-APK
+          path: TMessagesProj/build/outputs/apk/debug/*.apk
