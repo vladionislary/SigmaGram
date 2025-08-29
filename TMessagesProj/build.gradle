@@ -53,17 +53,24 @@ dependencies {
     implementation 'com.facebook.rebound:rebound:0.3.8'
 
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
-}
+
 
 android {
-    kotlinOptions {
+    defaultConfig {
+        namespace "org.telegram.messenger"  // ← правильно!
+        applicationId "ua.itlab.signagram"
+        // ... остальные параметры
+    }                                       // ← ЗДЕСЬ ЗАКАНЧИВАЕТСЯ defaultConfig
+    
+    kotlinOptions {                         // ← дальше другие блоки
         jvmTarget = '1.8'
     }
-
+    
     buildFeatures {
-    buildConfig = true    // ← ДОБАВЬ ЭТУ СТРОКУ
-    viewBinding true
+        buildConfig = true
+        viewBinding true
     }
+}
 
 
 
