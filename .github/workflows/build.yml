@@ -18,7 +18,7 @@ jobs:
         chmod +x gradlew
         ./gradlew assembleDebug --no-daemon
     - name: Upload APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4.3.3
       with:
         name: SigmaGram-APK
         path: TMessagesProj/build/outputs/apk/debug/*.apk
