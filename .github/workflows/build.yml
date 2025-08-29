@@ -19,9 +19,7 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Update Gradle Wrapper
-        run: ./gradlew wrapper --gradle-version=8.10 --distribution-type=bin
-
+      
       - name: Build with Gradle
         run: |
           ./gradlew assembleDebug --no-daemon
