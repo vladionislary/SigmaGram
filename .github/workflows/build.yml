@@ -1,31 +1,41 @@
 name: Android Build
+
 on: [push, workflow_dispatch]
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Обновил на v4
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
-          java-version: "17"
-          distribution: "temurin"
+          java-version: '17'
+          distribution: 'temurin'
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
+        with:
+          # Явно указываем нужные компоненты
+          components: platform-tools,build-tools;34.0.0,platforms;android-34,cmake,ndk;25.2.9519653
+
+      - name: Accept licenses
+        run: |
+          yes | sdkmanager --licenses || true
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      
       - name: Build with Gradle
         run: |
-          ./gradlew assembleDebug --no-daemon
+          ./gradlew assembleDebug --no-daemon --stacktrace
 
       - name: Upload APK
-        uses: actions/upload-artifact@v4.3.3
+        if: success()
+        uses: actions/upload-artifact@v4
         with:
           name: SigmaGram-APK
-          path: TMessagesProj/build/outputs/apk/debug/*.apk
+          path: TMessagesProj/build/outputs/apk/**/*.apk  # Более универсальный путь
