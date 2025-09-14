@@ -75,14 +75,13 @@ android {
     sourceSets.main.jniLibs.srcDirs = ['./jni/']
 
 
-    externalNativeBuild {
+   externalNativeBuild {
     cmake {
         path 'jni/CMakeLists.txt'
         version '3.10.2'
-        arguments '-DANDROID_STL=c++_static', '-DANDROID_PLATFORM=android-16',
-        cppFlags "-std=c++17"
+        arguments '-DANDROID_STL=c++_static', '-DANDROID_PLATFORM=android-16'
     }
-}
+} 
     
 
     lintOptions {
